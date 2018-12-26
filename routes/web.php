@@ -19,13 +19,13 @@
 //});
 
 // Homepage Route
-//Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/',function (){
+//Route::get('/',function (){
 
-  return view('home');
+//  return view('home');
 
-});
+//});
 
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
@@ -35,7 +35,7 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->middleware('auth');
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
-Route::post('/logout', 'Auth\LoginController@logout');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/login', 'Auth\LoginController@showLoginForm');
