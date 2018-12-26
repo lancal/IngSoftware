@@ -14,7 +14,8 @@ class CreateTipoConveniosTable extends Migration
     public function up()
     {
         Schema::create('tipo_convenios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id');
+            $table->string('nombre');
             $table->timestamps();
         });
     }

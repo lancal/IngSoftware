@@ -14,7 +14,9 @@ class CreateOrganizacionsTable extends Migration
     public function up()
     {
         Schema::create('organizacions', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('rut');
+            $table->string('nombre');
+            $table->string('responsable');
             $table->timestamps();
         });
     }
