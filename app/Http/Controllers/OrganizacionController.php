@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ExAlumno;
+use App\Organizacion;
 use Illuminate\Http\Request;
 
-class ExAlumnoController extends Controller
+class OrganizacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ExAlumnoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ExAlumno  $exAlumno
+     * @param  \App\Organizacion  $organizacion
      * @return \Illuminate\Http\Response
      */
-    public function show(ExAlumno $exAlumno)
+    public function show(Organizacion $organizacion)
     {
         //
     }
@@ -52,10 +52,10 @@ class ExAlumnoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ExAlumno  $exAlumno
+     * @param  \App\Organizacion  $organizacion
      * @return \Illuminate\Http\Response
      */
-    public function edit(ExAlumno $exAlumno)
+    public function edit(Organizacion $organizacion)
     {
         //
     }
@@ -64,10 +64,10 @@ class ExAlumnoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ExAlumno  $exAlumno
+     * @param  \App\Organizacion  $organizacion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ExAlumno $exAlumno)
+    public function update(Request $request, Organizacion $organizacion)
     {
         //
     }
@@ -75,10 +75,10 @@ class ExAlumnoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ExAlumno  $exAlumno
+     * @param  \App\Organizacion  $organizacion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ExAlumno $exAlumno)
+    public function destroy(Organizacion $organizacion)
     {
         //
     }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Oraganizacion extends Model
+class ActividadExtension extends Model
 {
     //
 }
