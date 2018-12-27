@@ -2,63 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a67d45a9-942f-4d04-9c5c-b66060568329" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Academico.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Academico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actividad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actividad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ActividadAprendizajeServicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ActividadAprendizajeServicio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ActividadExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ActividadExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ActividadTitulacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ActividadTitulacion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Convenio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Convenio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Estudiante.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Estudiante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Evidencia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Evidencia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Expositor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Expositor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AcademicoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AcademicoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActividadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActividadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActividadTitulacionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActividadTitulacionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EstudianteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EstudianteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EvidenciaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EvidenciaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExpositorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExpositorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrganizacionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrganizacionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TipoConvenioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TipoConvenioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Organizacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Organizacion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/TipoConvenio.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/TipoConvenio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_210318_create_tipo_convenios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_210318_create_tipo_convenios_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_213521_create_convenios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_213521_create_convenios_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_213933_create_organizacions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_213933_create_organizacions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214119_create_actividads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214119_create_actividads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214142_create_evidencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214142_create_evidencias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214247_create_actividad_titulacions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214247_create_actividad_titulacions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214405_create_estudiantes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214405_create_estudiantes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214443_create_academicos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214443_create_academicos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214649_create_actividad_extensions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214649_create_actividad_extensions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214726_create_expositors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214726_create_expositors_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214753_create_actividad_aprendizaje_servicios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_26_214753_create_actividad_aprendizaje_servicios_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_063425_create_academico_actividad_aprendizaje_servicio_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_063425_create_academico_actividad_aprendizaje_servicio_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_063505_create_academico_actividad_extension_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_063505_create_academico_actividad_extension_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_063524_create_academico_actividad_titulacion_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_063524_create_academico_actividad_titulacion_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_065328_create_role_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_065328_create_role_user_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_065400_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_065400_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_210318_create_tipo_convenios_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_213521_create_convenios_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_213933_create_organizacions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214119_create_actividads_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214142_create_evidencias_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214247_create_actividad_titulacions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214405_create_estudiantes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214443_create_academicos_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214649_create_actividad_extensions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214726_create_expositors_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_26_214753_create_actividad_aprendizaje_servicios_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_063425_create_academico_actividad_aprendizaje_servicio_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_063505_create_academico_actividad_extension_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_063524_create_academico_actividad_titulacion_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_065328_create_role_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065328_create_role_user_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_065400_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065400_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065418_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,17 +35,55 @@
     <executablePath>$USER_HOME$/.composer/vendor/bin/laravel</executablePath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_063425_create_academico_actividad_aprendizaje_servicio_table.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065418_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136" />
+            <state relative-caret-position="272">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="e#6#44#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065400_create_roles_table.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065328_create_role_user_table.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#li#0;n#ul#0;n#li#0;n#ul#1;n#div#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_063505_create_academico_actividad_extension_table.php">
+        <entry file="file://$PROJECT_DIR$/database/seeds/RoleTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Role_user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -120,7 +122,6 @@
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php" />
         <option value="$PROJECT_DIR$/app/Role.php" />
         <option value="$PROJECT_DIR$/app/role_user.php" />
         <option value="$PROJECT_DIR$/app/Role_user.php" />
@@ -136,6 +137,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2018_12_27_065328_create_role_user_table.php.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_27_065400_create_roles_table.php.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php" />
       </list>
     </option>
   </component>
@@ -218,7 +221,7 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="421" />
     <option name="y" value="-15" />
     <option name="width" value="698" />
@@ -232,6 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,6 +251,19 @@
             <path>
               <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
               <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -254,6 +271,19 @@
               <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="roleUser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
@@ -269,13 +299,14 @@
             <path>
               <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
               <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,6 +316,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/migrations/roleUser" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -323,6 +359,7 @@
       <workItem from="1545858543325" duration="2428000" />
       <workItem from="1545862546953" duration="1256000" />
       <workItem from="1545895544138" duration="478000" />
+      <workItem from="1545922622653" duration="3066000" />
     </task>
     <task id="LOCAL-00001" summary="configuracion base de datos">
       <created>1544851164246</created>
@@ -370,7 +407,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64350000" />
+    <option name="totallyTimeSpent" value="68709000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,10 +419,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43288592" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43295637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -398,10 +435,10 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" sideWeight="0.49919224" weight="0.32876712" />
-      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.4969743" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49757674" visible="true" weight="0.32739726" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5030257" side_tool="true" weight="0.19967794" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.32739726" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5024233" side_tool="true" weight="0.32739726" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -432,49 +469,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="77" lean-forward="true" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/view.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2602" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-421" />
@@ -567,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -629,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Role.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -646,16 +626,6 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_26_041913_create_roles_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_26_042034_create_role_user_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/UserRepo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
@@ -673,13 +643,6 @@
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Role_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -710,36 +673,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_065400_create_roles_table.php.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#44#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_065328_create_role_user_table.php.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#44#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#44#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_065400_create_roles_table.php.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_065328_create_role_user_table.php.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_065418_create_users_table.php.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_063524_create_academico_actividad_titulacion_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -749,6 +685,70 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_063505_create_academico_actividad_extension_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_26_214726_create_expositors_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="e#23#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/plantillaGeneral.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#li#0;n#ul#0;n#li#0;n#ul#1;n#div#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065418_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Role_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065328_create_role_user_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/roleUser/2018_12_27_065400_create_roles_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/RoleTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>

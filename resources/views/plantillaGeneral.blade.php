@@ -45,8 +45,8 @@
                 <ul class="nav navbar-nav navbar-right">
 
 
-                    {{--@if (Auth::guest())--}}
-                    @if(Auth::user()->hasRole('user'))--}}
+                    @if (Auth::guest())
+                    {{--@if(Auth::user()->hasRole('user'))--}}
                         {{--<div>Acceso como administrador</div>--}}
                         {{--<a class="btn btn-outline-light" href="{{ route('login') }}" role="button">Ingresar </a>--}}
                         {{--<a class="btn btn-outline-light" href="{{ route('register') }}" role="button"> Registrarse</a>--}}
