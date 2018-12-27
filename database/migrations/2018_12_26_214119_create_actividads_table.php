@@ -16,6 +16,9 @@ class CreateActividadsTable extends Migration
         Schema::create('actividads', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('descripcion',255);
+            $table->string('titulo',255);
+            $table->integer('cantidad_asistentes');
         });
     }
 

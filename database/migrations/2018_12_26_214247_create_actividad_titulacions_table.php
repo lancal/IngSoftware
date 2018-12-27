@@ -16,6 +16,10 @@ class CreateActividadTitulacionsTable extends Migration
         Schema::create('actividad_titulacions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->date('fecha_inicio');
+            $table->date('fecha_termino');
+            $table->string('lugar',255);
+
         });
     }
 
