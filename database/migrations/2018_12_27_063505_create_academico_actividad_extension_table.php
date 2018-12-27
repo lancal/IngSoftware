@@ -15,7 +15,12 @@ class CreateAcademicoActividadExtensionTable extends Migration
     {
         Schema::create('academico_actividad_extension', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('actividadExtension_id')->unsigned();
+            $table->integer('academico_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('actividadExtension_id')->references('id')->on('actividad_extensions');
+            $table->foreign('academico_id')->references('id')->on('academicos');
         });
     }
 

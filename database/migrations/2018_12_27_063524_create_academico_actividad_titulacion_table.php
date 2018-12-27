@@ -15,7 +15,12 @@ class CreateAcademicoActividadTitulacionTable extends Migration
     {
         Schema::create('academico_actividad_titulacion', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('actividadTitulacion_id')->unsigned();
+            $table->integer('academico_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('actividadTitulacion_id')->references('id')->on('actividad_titulacions');
+            $table->foreign('academico_id')->references('id')->on('academicos');
         });
     }
 

@@ -15,7 +15,15 @@ class CreateAcademicoActividadAprendizajeServicioTable extends Migration
     {
         Schema::create('academico_actividad_aprendizaje_servicio', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('actividadAmasS_id')->unsigned();
+            $table->integer('academico_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('actividadAmasS_id')->references('id')->on('actividad_aprendizaje_servicios');
+            $table->foreign('academico_id')->references('id')->on('academicos');
+
+            
         });
     }
 
