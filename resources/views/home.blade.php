@@ -4,7 +4,6 @@
     <title>Inicio</title>
 
 @endsection
-
 @section('contenido')
     <div class="container">
         </br>
