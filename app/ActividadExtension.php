@@ -11,4 +11,8 @@ class ActividadExtension extends Model
     {
         return $this->hasMany(Expositor::class, 'actividadExtension_id');
     }
+
+    public function academicos(){
+        return $this->belongsToMany(Academico::class,'academico_actividad_extension','actividadExtension_id','academico_id');
+    }
 }

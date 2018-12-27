@@ -11,4 +11,8 @@ class ActividadTitulacion extends Model
     {
         return $this->hasMany(Estudiante::class, 'actividadTitulacion_id');
     }
+
+    public function academicos(){
+        return $this->belongsToMany(Academico::class,'academico_actividad_titulacion','actividadTitulacion_id','academico_id');
+    }
 }
