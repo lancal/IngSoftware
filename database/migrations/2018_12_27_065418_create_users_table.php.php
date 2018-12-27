@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateRoleUserTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +11,16 @@ class CreateRoleUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('Role_user', function (Blueprint $table) {
+        Schema::create('User', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('User_id')->unsigned();
-            $table->integer('Role_id')->unsigned();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -28,6 +28,6 @@ class CreateRoleUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Role_user');
+        Schema::dropIfExists('User');
     }
 }

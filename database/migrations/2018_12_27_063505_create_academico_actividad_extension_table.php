@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoConveniosTable extends Migration
+class CreateAcademicoActividadExtensionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateTipoConveniosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_convenios', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('nombre',255)->unique();
+        Schema::create('academico_actividad_extension', function (Blueprint $table) {
+            $table->increments('id');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateTipoConveniosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_convenios');
+        Schema::dropIfExists('academico_actividad_extension');
     }
 }

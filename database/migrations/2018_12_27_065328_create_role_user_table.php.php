@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateTipoConveniosTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +11,13 @@ class CreateTipoConveniosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_convenios', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('nombre',255)->unique();
+        Schema::create('Role_user', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('User_id')->unsigned();
+            $table->integer('Role_id')->unsigned();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -27,6 +25,6 @@ class CreateTipoConveniosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_convenios');
+        Schema::dropIfExists('Role_user');
     }
 }

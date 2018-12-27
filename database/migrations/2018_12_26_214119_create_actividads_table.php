@@ -14,11 +14,14 @@ class CreateActividadsTable extends Migration
     public function up()
     {
         Schema::create('actividads', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
+            $table->integer('convenio_id')->nullable()->unsigned();
             $table->timestamps();
             $table->string('descripcion',255);
             $table->string('titulo',255);
-            $table->integer('cantidad_asistentes');
+            $table->integer('cantidad_asistentes')->nullable()->unsigned();
+
+            $table->foreign('convenio_id')->references('id')->on('convenios');
         });
     }
 

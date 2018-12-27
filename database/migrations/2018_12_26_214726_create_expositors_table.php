@@ -14,9 +14,12 @@ class CreateExpositorsTable extends Migration
     public function up()
     {
         Schema::create('expositors', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
+            $table->integer('actividadExtension_id')->unsigned();
             $table->string('nombre',255);
             $table->timestamps();
+
+            $table->foreign('actividadExtension_id')->references('id')->on('actividad_extensions');
         });
     }
 
