@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Role;
+
 class Role_Seeder extends Seeder
 {
     /**
@@ -11,6 +13,11 @@ class Role_Seeder extends Seeder
      */
     public function run()
     {
-        //
+        Role::truncate();
+
+        Role::create([
+            'name'	=> 'Administrador',
+            'description'	=> 'Es un Administrador'
+        ]);
     }
 }

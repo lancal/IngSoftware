@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
 
-    public $timestamps = false;
-    protected $table = 'roles';
+    //public $timestamps = false;
+    protected $table = 'Role';
     protected $fillable = ['name','description'];
 
 
@@ -16,9 +16,9 @@ class Role extends Model
     {
         return $this->belongsToMany(
             User::class,
-            'role_user',
-            'role_id',
-            'user_id')
+            'Role_User',
+            'Role_id',
+            'User_id')
             ->withTimestamps();
     }
 
