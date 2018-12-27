@@ -14,7 +14,7 @@ class ActividadAprendizajeServicioController extends Controller
      */
     public function index()
     {
-        //
+        return view('actividad-aprendizaje-servicio');
     }
 
     /**

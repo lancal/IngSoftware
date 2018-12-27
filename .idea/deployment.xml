@@ -5,7 +5,7 @@
       <paths name="ns">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/proyecto_app/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

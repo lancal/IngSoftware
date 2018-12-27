@@ -26,7 +26,7 @@ Route::get('/', 'HomeController@index')->name('index');
 //  return view('home');
 
 //});
-
+Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->middleware('auth');
@@ -43,3 +43,8 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/logout', 'Auth\LoginController@logout');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
+
+Route::get('/convenios', 'ConvenioController@index')->name('convenios');
+Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('actividad-extension');
+
+Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
