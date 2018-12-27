@@ -43,3 +43,5 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/logout', 'Auth\LoginController@logout');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
+
+Route::get('/convenios', 'ConvenioController@index')->name('convenios');

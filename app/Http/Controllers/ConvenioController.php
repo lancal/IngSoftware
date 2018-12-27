@@ -14,7 +14,7 @@ class ConvenioController extends Controller
      */
     public function index()
     {
-        //
+        return view('convenios');
     }
 
     /**
