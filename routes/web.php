@@ -26,7 +26,7 @@
 //  return view('home');
 
 //});
-Route::get('/home', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->middleware('auth');
