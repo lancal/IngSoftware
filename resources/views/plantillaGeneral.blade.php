@@ -23,10 +23,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003057;">
 
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}"><img
+        <a class="navbar-brand" href=""><img
                     src="http://www.ucn.cl/wp-content/uploads/2018/05/Escudo-UCN-Full-Color.png" width="" height="80"
                     alt="">
-            <a class="navbar-brand" href="{{ route('home') }}">Vinculación DISC UCN</a>
+            <a class="navbar-brand" href="">Vinculación DISC UCN</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
                     aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,14 +35,14 @@
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('home') }}">Inicio <span
+                        <a class="nav-link" href="">Inicio <span
                                     class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
                     </li>
                 </ul>
-                
+
             </div>
     </div>
 </nav>
