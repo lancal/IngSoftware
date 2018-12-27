@@ -15,6 +15,7 @@ class CreateExpositorsTable extends Migration
     {
         Schema::create('expositors', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre',255);
             $table->timestamps();
         });
     }

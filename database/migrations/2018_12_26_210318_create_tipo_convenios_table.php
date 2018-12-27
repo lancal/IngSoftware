@@ -15,7 +15,7 @@ class CreateTipoConveniosTable extends Migration
     {
         Schema::create('tipo_convenios', function (Blueprint $table) {
             $table->integer('id');
-            $table->string('nombre');
+            $table->string('nombre',255);
             $table->timestamps();
         });
     }

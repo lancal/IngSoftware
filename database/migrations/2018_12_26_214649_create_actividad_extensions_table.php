@@ -15,6 +15,8 @@ class CreateActividadExtensionsTable extends Migration
     {
         Schema::create('actividad_extensions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('lugar',255);
+            $table->date('fecha_realizacion');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateActividadAprendizajeServiciosTable extends Migration
     {
         Schema::create('actividad_aprendizaje_servicios', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('semestre')->unsigned();
+            $table->integer('cantidad_estudiantes')->unsigned();
+            $table->integer('anio')->unsigned();
+            $table->string('asignatura',255);
             $table->timestamps();
         });
     }
