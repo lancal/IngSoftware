@@ -23,7 +23,7 @@ class CreateAcademicoActividadAprendizajeServicioTable extends Migration
             $table->foreign('actividadAmasS_id')->references('id')->on('actividad_aprendizaje_servicios');
             $table->foreign('academico_id')->references('id')->on('academicos');
 
-            
+
         });
     }
 
