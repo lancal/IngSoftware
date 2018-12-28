@@ -53,6 +53,7 @@
 
                                 <label for="exampleFormControlInput1">Cantidad Asistentes</label>
                                 <select class="form-control" id="exampleFormControlSelect1">
+                                    <option selected>Elija una opción</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>

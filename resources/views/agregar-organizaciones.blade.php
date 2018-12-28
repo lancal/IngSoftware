@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Responsable</label>
                                 <input class="form-control" name="responsable" value="{{old('responsable') }}"
-                                placeholder="Ejemplo: Juan Riverz">
+                                placeholder="Ejemplo: Felipe Rivera">
 
                             </div>
                         </div>
@@ -53,8 +53,12 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Tipo Empresa</label>
-                                <input type="Fecha" class="form-control" name="tipoEmpresa" value="{{old('tipoEmpresa') }}"
-                                       placeholder="Ejemplo: Tipo">
+                                <select class="form-control" name="tipoEmpresa" value="{{old('tipoEmpresa') }}">
+                                    <option selected>Elija una opción</option>
+                                    <option>Empresa</option>
+                                    <option>Organización</option>
+                                    </select>
+
                             </div>
                         </div>
 
@@ -68,7 +72,7 @@
                                         <h4 class="modal-title" id="myModalLabel">Agregado Exitosamente</h4>
                                     </div>
                                     <div class="modal-body">
-                                        Se ha agregado exitosamente la Organizacioó.
+                                        Se ha agregado exitosamente la Organización.
                                     </div>
                                 </div>
                             </div>
