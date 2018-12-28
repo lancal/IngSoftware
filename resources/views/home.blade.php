@@ -15,7 +15,7 @@
                         <h5 class="card-title">Empresas u Organizaciones</h5>
                         <p class="card-text"></p>
                         <a href="{{ route('agregar-organizaciones') }}" class="btn btn-primary">Registrar</a>
-                        <a href="#" class="btn btn-primary">Ver Listado</a>
+                        <a href="{{ route('listar-organizaciones') }}" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>

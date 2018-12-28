@@ -52,6 +52,7 @@ Route::get('/actividad-extension', 'ExtensionController@index')->name('actividad
 Route::get('/actividad-aprendizaje-servicio', 'LearningserviceController@index')->name('actividad-aprendizaje-servicio');
 
 Route::get('/agregar-organizaciones', 'OrganizationController@index')->name('agregar-organizaciones');
+Route::get('/listar-organizaciones', 'OrganizationController@show')->name('listar-organizaciones');
 Route::post('/agregar-organizaciones', 'OrganizationController@store')->name('organizaciones');
 Route::get('/actividad-extension', 'ExtensionController@index')->name('actividad-extension');
 

@@ -50,13 +50,26 @@ class AgreementController extends Controller
         //Agreement::create($request->all());
        // return 'Store';
         $this->validate($request, [
-           'nombre' => 'required',
-            'fechaInicio' => 'required',
+           'rutaEvidencia' => 'required',
             'duracion' => 'required',
+            'fechaInicio' => 'required',
+            'identificador' => 'required',
             'tipoConvenio' => 'required',
+            'organization_id' => 'required',
         ]);
 
-        return;
+        $convenio = new Agreement();
+        $convenio->rutaEvidencia = $request->input('rutaEvidencia');
+        $convenio->duracion = $request->input('duracion');
+        $convenio->fechaInicio= $request->input('fechaInicio');
+        $convenio->identificador = $request->input('identificador');
+        $convenio->tipoConvenio = $request->input('tipoConvenio');
+        $convenio->organization_id = $request->input('organization_id');
+        $convenio->save();
+
+
+
+        return view('convenios');
     }
 
     /**

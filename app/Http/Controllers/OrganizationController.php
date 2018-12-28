@@ -63,9 +63,14 @@ class OrganizationController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(Organization $organization)
+    //public function show(Organization $organization)
+
+    public function show()
+
     {
-        //
+        $organizaciones = Organization::all();
+
+        return view('organizationList',compact('organizaciones'));
     }
 
     /**
