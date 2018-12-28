@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Tipo Convenio</label>
-                                <select class="form-control" name="tipoConvenio" value="{{old('tipoCOnvenio') }}">
+                                <select class="form-control" name="tipoConvenio" value="{{old('tipoConvenio') }}">
                                     <option>Capstone</option>
                                     <option>Marco</option>
                                     <option>Específico</option>
