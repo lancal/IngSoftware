@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectAfterLogout = '/';
 
     /**
      * Create a new controller instance.
@@ -47,7 +47,7 @@ class LoginController extends Controller
         Auth::logout();
         Session::flush();
         //return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
-        return redirect(property_exists($this, 'redirectAfterLogout') ?$this->redirectAfterLogout : '/');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
         //return redirect('login');
     }
 }
