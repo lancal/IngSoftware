@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @yield('tittle')
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
     <!-- Fonts -->
     <link href=https://use.typekit.net/ynl5gwa.css" rel="stylesheet" type="text/css">
@@ -50,29 +51,31 @@
                         {{--<a class="btn btn-outline-light" href="{{ route('login') }}" role="button">Ingresar </a>--}}
                         {{--<a class="btn btn-outline-light" href="{{ route('register') }}" role="button"> Registrarse</a>--}}
                     @else
-                        <li class="dropdown">
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">--}}
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="btn-group">
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>--}}
+                            <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                                {{ Auth::user()->name }}<span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{{ route('logout') }}"
+                                    <a class="dropdown-item disabled" href="#">Mi Cuenta</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+                                                     document.getElementById('logout-form').submit();">Cerrar Sesión</a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
                             </ul>
-                        </li>
+                        </div>
                     @endif
-
                 </ul>
             </div>
     </div>
@@ -83,5 +86,7 @@
 @yield('contenido')
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
