@@ -45,6 +45,7 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
 
 Route::get('/convenios', 'AgreementController@index')->name('convenios');
+
 Route::post('/convenios','AgreementController@store')->name('agregarConvenio');
 Route::get('/actividad-extension', 'ExtensionController@index')->name('actividad-extension');
 
@@ -52,3 +53,6 @@ Route::get('/actividad-aprendizaje-servicio', 'LearningserviceController@index')
 
 Route::get('/agregar-organizaciones', 'OrganizationController@index')->name('agregar-organizaciones');
 Route::post('/agregar-organizaciones', 'OrganizationController@store')->name('organizaciones');
+Route::get('/actividad-extension', 'ExtensionController@index')->name('actividad-extension');
+
+Route::get('/actividad-aprendizaje-servicio', 'LearningserviceController@index')->name('actividad-aprendizaje-servicio');
