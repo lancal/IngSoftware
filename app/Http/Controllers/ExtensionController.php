@@ -14,7 +14,7 @@ class ExtensionController extends Controller
      */
     public function index()
     {
-        //
+        return view('actividad-extension');
     }
 
     /**
