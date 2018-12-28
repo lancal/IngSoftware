@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AgreementController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,7 @@ class AgreementController extends Controller
      */
     public function index()
     {
-        //
+        return view('convenios');
     }
 
     /**
@@ -24,7 +25,7 @@ class AgreementController extends Controller
      */
     public function create()
     {
-        //
+        return view('convenios');
     }
 
     /**
@@ -35,7 +36,27 @@ class AgreementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //dd($request->all());
+       // $convenio = new Agreement();
+        //$convenio-> nombre = $request->input('nombre');
+        //$convenio-> rutaEvidencia = 'ruta1';
+        //$convenio-> duracion = $request->input('duracion');
+        //$convenio-> fechaInicio = $request->input('fechaInicio');
+        //$convenio-> identificador = 'id1';
+
+        //$convenio-> tipoConvenio = $request->input('tipoConvenio');
+        //$convenio->organization_id ='1';
+        //$convenio->save();
+        //Agreement::create($request->all());
+       // return 'Store';
+        $this->validate($request, [
+           'nombre' => 'required',
+            'fechaInicio' => 'required',
+            'duracion' => 'required',
+            'tipoConvenio' => 'required',
+        ]);
+
+        return;
     }
 
     /**
