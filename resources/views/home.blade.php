@@ -8,6 +8,21 @@
     <div class="container">
         </br>
         <div class="row">
+
+        <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Empresas u Organizaciones</h5>
+                        <p class="card-text"></p>
+                        <a href="{{ route('agregar-organizaciones') }}" class="btn btn-primary">Registrar</a>
+                        <a href="#" class="btn btn-primary">Ver Listado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <hr>
+            <div class="row">
+
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
@@ -18,6 +33,9 @@
                     </div>
                 </div>
             </div>
+
+            </br>
+
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">

@@ -14,7 +14,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        //
+        return view('agregar-organizaciones');
     }
 
     /**
@@ -33,10 +33,29 @@ class OrganizationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+
+     public function store(Request $request)
+        {
+        $this->validate($request, [
+                       'nombre' => 'required',
+                        'responsable' => 'required',
+                        'rutEmpresa' => 'required',
+                        'tipoEmpresa' => 'required',
+                    ]);
+
+           //dd($request->all());
+           $empresa = new Organization();
+           $empresa->nombre = $request->input('nombre');
+           $empresa->responsable = $request->input('responsable');
+           $empresa->rut = $request->input('rutEmpresa');
+           $empresa->tipoEmpresa = $request->input('tipoEmpresa');
+            $empresa->save();
+
+           return view('agregar-organizaciones');
+
+           // return;
+        }
+
 
     /**
      * Display the specified resource.
