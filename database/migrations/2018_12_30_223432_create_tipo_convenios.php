@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrganizationsTable extends Migration
+class CreateTipoConvenios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateOrganizationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('organizations', function (Blueprint $table) {
+        Schema::create('tipo_convenios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',50)->unique();
-            $table->string('responsable');
-            $table->string('rut',20)->unique();
-            $table->enum('tipoEmpresa',['Organizacion','Empresa']);
             $table->timestamps();
+            $table->string('nombre',255);
         });
     }
 
@@ -30,6 +27,6 @@ class CreateOrganizationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organizations');
+        Schema::dropIfExists('tipo_convenios');
     }
 }
