@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a67d45a9-942f-4d04-9c5c-b66060568329" name="Default Changelist" comment="Creacion Role y User Seeder">
-      <change beforePath="$PROJECT_DIR$/resources/views/agregar-organizaciones.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agregar-organizaciones.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/convenios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/convenios.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/actividad-extension.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/actividad-extension.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,20 +30,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="-826">
+              <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="109">
               <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/actividad-extension.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2047">
+              <caret line="197" column="11" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="223" selection-start-line="223" selection-end-line="223" />
             </state>
           </provider>
         </entry>
@@ -118,13 +135,13 @@
         <option value="$PROJECT_DIR$/app/Agreement.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgreementController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrganizationController.php" />
-        <option value="$PROJECT_DIR$/resources/views/actividad-extension.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/organizationList.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agregar-organizaciones.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/convenios.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/actividad-extension.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -353,7 +370,7 @@
       <workItem from="1545895544138" duration="478000" />
       <workItem from="1545922622653" duration="14022000" />
       <workItem from="1545987254696" duration="930000" />
-      <workItem from="1546756054116" duration="3472000" />
+      <workItem from="1546756054116" duration="4026000" />
     </task>
     <task id="LOCAL-00001" summary="configuracion base de datos">
       <created>1544851164246</created>
@@ -422,7 +439,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101031000" />
+    <option name="totallyTimeSpent" value="101585000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,24 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/actividad-extension.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="55" column="78" selection-start-line="55" selection-start-column="78" selection-end-line="55" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/organizationList.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -773,13 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/agregar-organizaciones.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -787,10 +783,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/actividad-extension.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2047">
+          <caret line="197" column="11" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/actividad-aprendizaje-servicio.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
+        <state relative-caret-position="109">
           <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-826">
+          <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
         </state>
       </provider>
     </entry>

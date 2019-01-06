@@ -16,6 +16,7 @@
             font-family: myriad-pro, sans-serif;
             font-weight: 200;
             font-style: normal;
+            font-size: 14px;
         }
     </style>
 </head>
