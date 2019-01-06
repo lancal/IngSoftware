@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Agreement;
+use App\Organization;
 use Illuminate\Http\Request;
 
 class AgreementController extends Controller
@@ -64,7 +65,12 @@ class AgreementController extends Controller
         $convenio->fechaInicio= $request->input('fechaInicio');
         $convenio->identificador = $request->input('identificador');
         $convenio->tipoConvenio = $request->input('tipoConvenio');
+
+        $nombreEmpresa = Organization::all();
+
         $convenio->organization_id = $request->input('organization_id');
+
+        //$convenio->nombreEmpresa = $request->input('organization_id');
         $convenio->save();
 
 

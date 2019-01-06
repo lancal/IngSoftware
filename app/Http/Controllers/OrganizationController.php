@@ -37,7 +37,7 @@ class OrganizationController extends Controller
      public function store(Request $request)
         {
         $this->validate($request, [
-                       'nombre' => 'required',
+                       'nombreEmpresa' => 'required',
                         'responsable' => 'required',
                         'rutEmpresa' => 'required',
                         'tipoEmpresa' => 'required',
@@ -45,11 +45,11 @@ class OrganizationController extends Controller
 
            //dd($request->all());
            $empresa = new Organization();
-           $empresa->nombre = $request->input('nombre');
+           $empresa->nombre = $request->input('nombreEmpresa');
            $empresa->responsable = $request->input('responsable');
            $empresa->rut = $request->input('rutEmpresa');
            $empresa->tipoEmpresa = $request->input('tipoEmpresa');
-            $empresa->save();
+           $empresa->save();
 
            return view('agregar-organizaciones');
 

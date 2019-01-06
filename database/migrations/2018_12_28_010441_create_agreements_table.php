@@ -14,8 +14,7 @@ class CreateAgreementsTable extends Migration
     public function up()
     {
         Schema::create('agreements', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre')->unique();
+            $table->increments('id');            
             $table->string('rutaEvidencia')->unique();
             $table->integer('duracion')->unsigned();
             $table->date('fechaInicio');
