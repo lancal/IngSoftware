@@ -15,13 +15,16 @@ class Convenio extends Model
     public function tipoConvenio()
     {
        return $this->belongsTo(TipoConvenio::class);
+
     }
 
     public function organizacion(){
         return $this->belongsTo(Organizacion::class);
+
     }
 
     public function evidencia(){
         return $this->hasOne(Evidencia::class);
+
     }
 }

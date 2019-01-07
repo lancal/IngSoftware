@@ -18,8 +18,7 @@ class Role extends Model
             User::class,
             'Role_User',
             'Role_id',
-            'User_id')
-            ->withTimestamps();
+            'User_id');
     }
 
 }

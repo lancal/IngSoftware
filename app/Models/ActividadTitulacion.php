@@ -13,11 +13,13 @@ use Illuminate\Database\Eloquent\Model;
 
         public function actividad(){
             return $this->belongsTo(Actividad::class);
+
     }
 
     public function estudiantes(){
         return $this->hasMany(Estudiante::class,
             'actividad_titulaciones_actividad_id');
+
     }
 
     public function academicos(){
@@ -25,5 +27,6 @@ use Illuminate\Database\Eloquent\Model;
             'actividad_titulacion_academicos',
             'act_titul_actividad_id',
             'academico_rut');
+
     }
 }

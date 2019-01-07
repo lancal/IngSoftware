@@ -13,5 +13,6 @@ class Estudiante extends Model
 
     public function actividadTitulaciones(){
         return $this->belongsTo(ActividadTitulacion::class);
+
     }
 }

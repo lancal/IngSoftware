@@ -14,6 +14,7 @@ class Academico extends Model
 
     public function tipoAcademico(){
         return $this->belongsTo(TipoAcademico::class);
+
     }
 
     public function actividadTitulacion(){
@@ -23,6 +24,7 @@ class Academico extends Model
             'act_titul_actividad_id');
 
 
+
     }
 
     public function actividadExtensiones(){
@@ -30,9 +32,11 @@ class Academico extends Model
             'academico_actividad_extension',
             'academico_rut',
             'act_ext_actividad_id');
+
     }
 
     public function actividadAprendizajeServicios(){
         return $this->hasMany(ActividadAprendizajeServicio::class);
+
     }
 }

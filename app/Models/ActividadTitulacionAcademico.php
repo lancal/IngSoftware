@@ -10,4 +10,6 @@ class ActividadTitulacionAcademico extends Pivot
     public $incrementing  = false;
     protected $primaryKey = null;
 
+    protected $fillable = ['act_titul_actividad_id','academico_rut'];
+
 }

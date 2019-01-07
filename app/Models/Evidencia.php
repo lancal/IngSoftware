@@ -15,10 +15,12 @@ class Evidencia extends Model
     public function convenio(){
 
         return $this->belongsTo(Convenio::class,'convenio_id');
+
     }
 
     public function actividades(){
         return $this->belongsToMany(Actividad::class,'actividad_id');
+
 
     }
 

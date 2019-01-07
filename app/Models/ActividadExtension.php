@@ -9,7 +9,7 @@ class ActividadExtension extends Model
     protected $table = 'actividad_extensiones';
     public $incrementing = true;
     protected $primaryKey = 'actividad_id';
-    protected $fillable = ['lugar','fecha_realizacion'];
+    protected $fillable = ['lugar','fecha_realizacion','actividad_id'];
 
     public function actividad(){
         return $this->belongsTo(Actividad::class);
