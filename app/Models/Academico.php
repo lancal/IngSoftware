@@ -24,4 +24,15 @@ class Academico extends Model
 
 
     }
+
+    public function actividadExtensiones(){
+        return $this-> belongsToMany(ActividadExtension::class,
+            'academico_actividad_extension',
+            'academico_rut',
+            'act_ext_actividad_id');
+    }
+
+    public function actividadAprendizajeServicios(){
+        return $this->hasMany(ActividadAprendizajeServicio::class);
+    }
 }

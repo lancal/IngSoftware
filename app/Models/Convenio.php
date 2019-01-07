@@ -10,6 +10,8 @@ class Convenio extends Model
 
     protected $fillable = ['nombre','fecha_inicio','duracion'];
 
+
+
     public function tipoConvenio()
     {
        return $this->belongsTo(TipoConvenio::class);
