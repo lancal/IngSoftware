@@ -51,7 +51,7 @@ Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('
 
 Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
 
-Route::get('/agregar-organizaciones', 'OrganizacionController@create')->name('agregar-organizaciones');
+Route::get('/agregar-organizaciones', 'OrganizacionController@index')->name('agregar-organizaciones');
 Route::get('/listar-organizaciones', 'OrganizacionController@index')->name('organizationList');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
 Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('actividad-extension');
