@@ -14,4 +14,8 @@ class ActividadAprendizajeServicio extends Model
     public function actividad(){
         return $this->belongsTo(Actividad::class);
     }
+
+    public function academico(){
+        return $this->belongsTo(Academico::class);
+    }
 }

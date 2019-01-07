@@ -21,20 +21,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($organizaciones as $organizations)
+                    @foreach($organizations as $agregarorganizaciones)
                         <tr>
-
-<<<<<<< HEAD
-                            <td> {{$organizations->nombre}}     </td>
+                            <td> {{$organizations->nombre}}         </td>
                             <td> {{$organizations->responsable}}    </td>
-                            <td> {{$organizations->rut}}    </td>
+                            <td> {{$organizations->rut}}            </td>
                             <td> {{$organizations->tipoEmpresa}}    </td>
-=======
-                            <td> {{$organizations->nombre}}</td>
-                            <td> {{$organizations->responsable}}</td>
-                            <td> {{$organizations->rut}}</td>
-                            <td> {{$organizations->tipoEmpresa}}</td>
->>>>>>> 2239a7af8f894e7acac0dfcf34423d3b360e5ef6
+
                         </tr>
                     @endforeach
                     </tbody>

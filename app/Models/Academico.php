@@ -10,7 +10,7 @@ class Academico extends Model
     protected $primaryKey = 'rut';
     public $incrementing = false;
 
-    protected $fillable = ['rut','nombre','tipo_academico'];
+    protected $fillable = ['rut','nombre','tipo_academico_id'];
 
     public function tipoAcademico(){
         return $this->belongsTo(TipoAcademico::class);
@@ -23,5 +23,16 @@ class Academico extends Model
             'act_titul_actividad_id');
 
 
+    }
+
+    public function actividadExtensiones(){
+        return $this-> belongsToMany(ActividadExtension::class,
+            'academico_actividad_extension',
+            'academico_rut',
+            'act_ext_actividad_id');
+    }
+
+    public function actividadAprendizajeServicios(){
+        return $this->hasMany(ActividadAprendizajeServicio::class);
     }
 }

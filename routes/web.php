@@ -44,19 +44,19 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
 
-Route::get('/convenios', 'AgreementController@index')->name('convenios');
+Route::get('/convenios', 'ConvenioController@index')->name('convenios');
 
-Route::post('/convenios','AgreementController@store')->name('agregarConvenio');
-Route::get('/actividad-extension', 'ExtensionController@index')->name('actividad-extension');
+Route::post('/convenios','ConvernioController@store')->name('agregarConvenio');
+Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('actividad-extension');
 
-Route::get('/actividad-aprendizaje-servicio', 'LearningserviceController@index')->name('actividad-aprendizaje-servicio');
+Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
 
-Route::get('/agregar-organizaciones', 'OrganizationController@index')->name('agregar-organizaciones');
-Route::get('/listar-organizaciones', 'OrganizationController@show')->name('listar-organizaciones');
-Route::post('/agregar-organizaciones', 'OrganizationController@store')->name('organizaciones');
-Route::get('/actividad-extension', 'ExtensionController@index')->name('actividad-extension');
+Route::get('/agregar-organizaciones', 'OrganizacionController@create')->name('agregar-organizaciones');
+Route::get('/listar-organizaciones', 'OrganizacionController@index')->name('organizationList');
+Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
+Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('actividad-extension');
 
-Route::get('/actividad-aprendizaje-servicio', 'LearningserviceController@index')->name('actividad-aprendizaje-servicio');
+Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
 
 
 //Route::get('/agregar-organizaciones', function () {
