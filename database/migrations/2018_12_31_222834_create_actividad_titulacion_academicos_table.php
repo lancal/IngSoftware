@@ -16,6 +16,7 @@ class CreateActividadTitulacionAcademicosTable extends Migration
         Schema::create('actividad_titulacion_academicos', function (Blueprint $table) {
             $table->unsignedInteger('act_titul_actividad_id');
             $table->string('academico_rut',13);
+            $table->timestamps();
         });
 
         Schema::table('actividad_titulacion_academicos',function (Blueprint $table){

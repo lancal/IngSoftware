@@ -14,7 +14,7 @@ class CreateAcademicosTable extends Migration
     public function up()
     {
         Schema::create('academicos', function (Blueprint $table) {
-            $table->string('rut',13)->primary()->unique();
+            $table->string('rut',255)->primary()->unique();
             $table->string('nombre',255);
             $table->string('tipo_academico',255);
             $table->timestamps();

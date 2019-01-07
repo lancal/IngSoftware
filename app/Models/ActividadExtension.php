@@ -15,7 +15,7 @@ class ActividadExtension extends Model
         return $this->belongsTo(Actividad::class);
     }
 
-    public function actividadExtensiones(){
+    public function academico(){
         return $this->belongsToMany(Academico::class,
             'academico_actividad_extensiones',
             'act_ext_actividad_id',

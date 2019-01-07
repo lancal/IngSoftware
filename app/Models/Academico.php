@@ -13,7 +13,8 @@ class Academico extends Model
     protected $fillable = ['rut','nombre','tipo_academico_id'];
 
     public function tipoAcademico(){
-        return $this->belongsTo(TipoAcademico::class);
+        return $this->belongsTo(TipoAcademico::class,
+            'id');
 
     }
 
@@ -36,7 +37,8 @@ class Academico extends Model
     }
 
     public function actividadAprendizajeServicios(){
-        return $this->hasMany(ActividadAprendizajeServicio::class);
+        return $this->hasMany(ActividadAprendizajeServicio::class,
+            'academico_rut');
 
     }
 }

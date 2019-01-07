@@ -15,9 +15,9 @@ class CreateOrganizaciones extends Migration
     {
         Schema::create('organizaciones', function (Blueprint $table) {
             $table->string('rut',15)->primary()->unique();
-            $table->timestamps();
             $table->string('nombre',255);
             $table->string('responsable',255);
+            $table->timestamps();
 
 
         });

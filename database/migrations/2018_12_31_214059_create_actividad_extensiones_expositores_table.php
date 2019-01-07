@@ -14,9 +14,10 @@ class CreateActividadExtensionesExpositoresTable extends Migration
     public function up()
     {
         Schema::create('actividad_extensiones_expositores', function (Blueprint $table) {
-            $table->timestamps();
+
             $table->unsignedInteger('act_ext_actividad_id');
             $table->unsignedInteger('expositor_id');
+            $table->timestamps();
 
 
 

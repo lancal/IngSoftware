@@ -11,7 +11,8 @@ class Actividad extends Model
 
 
     public function aprendizajeServicio(){
-        return $this->hasMany(ActividadAprendizajeServicio::class);
+        return $this->hasMany(ActividadAprendizajeServicio::class,
+            'actividad_id');
 
     }
 

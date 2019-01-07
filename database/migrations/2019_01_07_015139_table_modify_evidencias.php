@@ -15,6 +15,8 @@ class TableModifyEvidencias extends Migration
     {
         Schema::table('evidencias',function (Blueprint $table){
             $table->increments('id');
+
+            $table->timestamps();
         });
     }
 
