@@ -17,20 +17,17 @@ class CreateActividadExtensionesExpositoresTable extends Migration
 
             $table->unsignedInteger('act_ext_actividad_id');
             $table->unsignedInteger('expositor_id');
+            $table->foreign('expositor_id')->references('id')->on('expositores');
+            $table->foreign('act_ext_actividad_id')->references('id')->on('actividad_extensiones');
             $table->timestamps();
-
-
 
         });
 
         Schema::table('actividad_extensiones_expositores',function (Blueprint $table){
-           $table->foreign('act_ext_actividad_id')
-               ->references('actividad_id')
-              ->on('actividad_extensiones');
 
-           $table->foreign('expositor_id')
-             ->references('id')
-             ->on('expositores');
+            $table->dropForeign(['expositor_id']);
+            $table->dropForeign(['act_ext_actividad_id']);
+
         });
     }
 

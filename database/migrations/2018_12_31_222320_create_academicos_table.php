@@ -14,11 +14,22 @@ class CreateAcademicosTable extends Migration
     public function up()
     {
         Schema::create('academicos', function (Blueprint $table) {
+
             $table->string('rut',255)->primary()->unique();
             $table->string('nombre',255);
-            $table->string('tipo_academico',255);
+            $table->string('tipo_academico_id',255);
+            $table->foreign('tipo_academico_id')->references('id')->on('tipo_academicos');
+
             $table->timestamps();
         });
+
+
+        Schema::table('academicos', function (Blueprint $table) {
+
+            $table->dropForeign(['tipo_academico_id']);
+
+        });
+
     }
 
     /**

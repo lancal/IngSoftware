@@ -19,6 +19,7 @@ class CreateAcademicoActividadExtensionesTable extends Migration
             $table->foreign('academico_rut')->references('id')->on('academicos');
             $table->foreign('act_ext_actividad_id')->references('id')->on('actividad_extensiones');
             $table->timestamps();
+
         });
 
         Schema::table('academico_actividad_extensiones', function (Blueprint $table) {

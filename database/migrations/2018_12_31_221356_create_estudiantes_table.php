@@ -19,16 +19,18 @@ class CreateEstudiantesTable extends Migration
             $table->string('nombre',255);
             $table->string('carrera');
             $table->unsignedInteger('actividad_titulaciones_actividad_id');
+            $table->foreign('actividad_titulaciones_actividad_id')->references('id')->on('actividad_titulaciones');
+
             $table->timestamps();
 
 
         });
 
         Schema::table('estudiantes',function (Blueprint $table){
-             $table->foreign('actividad_titulaciones_actividad_id')
-                 ->references('actividad_id')
-                 ->on('actividad_titulaciones');
-    });
+
+            $table->dropForeign(['actividad_titulaciones_actividad_id']);
+
+        });
     }
 
     /**
