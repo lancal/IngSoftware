@@ -6,7 +6,7 @@
     @endsection
     @section('contenido')</br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('convenios') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
 

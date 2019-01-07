@@ -18,19 +18,13 @@
     </br>
 </div>
 
-<div class="container col-md-7 ">
+<div class="container col-md-6 ">
     <div class="card ">
         <h4 class="card-header">Registrar Actividad Titulación por Convenio</h4>
         <div class="card-body">
             <div class="container">
                 <form name="form"  onsubmit="return Valida_Rut(form.rut)" method="POST" action="/registrar-titulacion-convenio" autocomplete="off">
                     {{ csrf_field() }}
-
-
-
-
-
-
 
                     <div class="col-md-12">
                         <div class="form-group{{ $errors->has('titulo') ? ' has-error' : '' }}">
@@ -119,7 +113,41 @@
                             @endif
                         </div>
                     </div>
+
                     <hr>
+                    <div class="col-md-12">
+                        <div class="form-row" >
+                            <div class="form-group col-md-5 {{ $errors->has('fechaInicio') ? ' has-error' : '' }}">
+                                <label for="fechaInicio">Fecha Inicio (*)</label>
+                                <input type="date" class="form-control" id="fechaInicio" name="fechaInicio"
+                                       required autofocus>
+
+
+                                @if ($errors->has('fechaInicio'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('fechaInicio') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group col-md-5 {{ $errors->has('fechaTermino') ? ' has-error' : '' }}">
+                                <label for="fechaTermino">Fecha Termino </label>
+                                <input type="date" class="form-control" id="fechaTermino" name="fechaTermino"
+                                       autofocus>
+
+
+                                @if ($errors->has('fechaTermino'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('fechaTermino') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr>
+
                     <div class="col-md-12">
                         <div class="form-group {{ $errors->has('nombreProfesorGuia') ? ' has-error' : '' }}">
 
@@ -171,6 +199,55 @@
         </div>
     </div>
     @endsection
+    <script language="JavaScript">
+        //Creacion de Variable incremental
+        var incremento = 0;
+
+        //Lo que se hará cuando se presione el boton de Agregar
+        function agregar(obj)
+        {
+
+            incremento++;
+
+
+            //Obteniendo el Div "productos"
+            bloque = document.getElementById('productos');
+
+//Creando el Select que irá dentro del Div "productos"
+            elemento = document.createElement('select');
+            elemento.setAttribute("class", "custom-select custom-select-sm-1 mb-3" );
+            elemento.id = 'select'+incremento;
+            bloque.appendChild(elemento);
+
+
+            //Llenando el arreglo que contendrá los "Options" de nuestro "Select"
+            var options = [
+                "Camisa",
+                "Sueter",
+                "Jeans",
+                "Sudadera",
+                "Zapatos"
+            ];
+
+
+            //Agregando nuestros "Options" a nuestro "Select"
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement("option");
+                option.value = options[i];
+                option.text = options[i];
+                elemento.appendChild(option);
+            }
+        }
+
+
+        //Lo que se hará cuando se presione el boton de Borrar
+        function borrar(obj) {
+            incremento = incremento - 1;
+            bloque = document.getElementById('productos');
+            bloque.removeChild(bloque.lastChild);
+        }
+    </script>
+
     <script>
         function Valida_Rut( Objeto )
         {

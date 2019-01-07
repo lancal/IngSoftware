@@ -47,7 +47,7 @@ class OrganizacionController extends Controller
      */
     public function show(Organizacion $organizacion)
     {
-        return view('organizacionList');
+        return view('organizationList');
     }
 
     /**
