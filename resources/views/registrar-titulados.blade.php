@@ -23,7 +23,7 @@
         <h4 class="card-header">Registrar Titulados</h4>
         <div class="card-body">
             <div class="container">
-                <form name="form"  onsubmit="return Valida_Rut(form.rut)" method="POST" action="/registrar-titulados" autocomplete="off">
+                <form name="form"  onsubmit="return Valida_Rut(form.rut)" method="POST" action="{{ route('registrar-titulados') }}" autocomplete="off">
                     {{ csrf_field() }}
                     <div class="col-md-12">
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">

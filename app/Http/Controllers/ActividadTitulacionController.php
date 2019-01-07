@@ -15,7 +15,7 @@ class ActividadTitulacionController extends Controller
      */
     public function index()
     {
-        //
+        return view('registrar-titulacion-convenio');
     }
 
     /**
@@ -36,7 +36,10 @@ class ActividadTitulacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+
+        return view('registrar-titulacion-convenio');
     }
 
     /**

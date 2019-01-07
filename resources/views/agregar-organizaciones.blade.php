@@ -6,7 +6,7 @@
     @endsection
     @section('contenido')</br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('convenios') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
 
@@ -15,7 +15,7 @@
             <h4 class="card-header"> Registrar Organizaciones o Empresas</h4>
             <div class="card-body">
                 <div class="container">
-                    <form name="form" onsubmit="return Valida_Rut(form.rutEmpresa)" action="{{ route('organizaciones') }}" method="POST" role="form" autocomplete="off">
+                    <form name="form" onsubmit="return Valida_Rut(form.rutEmpresa)" action="{{ route('agregar-organizaciones') }}" method="POST" role="form" autocomplete="off">
                         {{ csrf_field() }}
 
 

@@ -82,7 +82,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Titulados</h5>
                         <p class="card-text"></p>
-                        <a href="/registrar-titulados" class="btn btn-primary">Registrar</a>
+                        <a href="{{ route('registrar-titulados') }}" class="btn btn-primary">Registrar</a>
                         <a href="#" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Actividad de Titulación por Convenio</h5>
                         <p class="card-text"></p>
-                        <a href="/registrar-titulacion-convenio" class="btn btn-primary">Registrar</a>
+                        <a href="{{ route('registrar-titulacion-convenio') }}" class="btn btn-primary">Registrar</a>
                         <a href="#" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>

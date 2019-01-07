@@ -15,7 +15,7 @@ class ActividadExtensionController extends Controller
      */
     public function index()
     {
-        //
+        return view('actividad-extension');
     }
 
     /**
@@ -36,7 +36,7 @@ class ActividadExtensionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('actividad-extension');
     }
 
     /**

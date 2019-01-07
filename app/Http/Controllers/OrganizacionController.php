@@ -15,7 +15,7 @@ class OrganizacionController extends Controller
      */
     public function index()
     {
-        return view('organizationList');
+        return view('agregar-organizaciones');
     }
 
     /**
@@ -47,7 +47,7 @@ class OrganizacionController extends Controller
      */
     public function show(Organizacion $organizacion)
     {
-
+        return view('organizationList');
     }
 
     /**

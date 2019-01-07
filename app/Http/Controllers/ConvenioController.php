@@ -15,7 +15,7 @@ class ConvenioController extends Controller
      */
     public function index()
     {
-        //
+        return view('convenios');
     }
 
     /**
@@ -36,7 +36,7 @@ class ConvenioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('convenios');
     }
 
     /**

@@ -15,7 +15,7 @@ class TituladoController extends Controller
      */
     public function index()
     {
-        //
+        return view('registrar-titulados');
     }
 
     /**

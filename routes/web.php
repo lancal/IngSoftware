@@ -44,41 +44,22 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
 
-Route::get('/convenios', 'ConvenioController@index')->name('convenios');
+Route::get('/convenios', 'ConvenioController@index');
+Route::post('/convenios','ConvernioController@store')->name('convenios');
 
-Route::post('/convenios','ConvernioController@store')->name('agregarConvenio');
-Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('actividad-extension');
-
-Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
-
-Route::get('/agregar-organizaciones', 'OrganizacionController@create')->name('agregar-organizaciones');
-Route::get('/listar-organizaciones', 'OrganizacionController@index')->name('organizationList');
+Route::get('/agregar-organizaciones', 'OrganizacionController@index');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
-Route::get('/actividad-extension', 'ActividadExtensionController@index')->name('actividad-extension');
 
-Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
+Route::get('/organizationList', 'OrganizacionController@show')->name('organizationList');
 
+Route::get('/actividad-extension', 'ActividadExtensionController@index');
+Route::post('/actividad-extension', 'ActividadExtensionController@store')->name('actividad-extension');
 
-//Route::get('/agregar-organizaciones', function () {
-  //  return view('agregar-organizaciones');
-//});
+Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index');
+Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
 
-//Route::post('/agregar-organizaciones', function () {
-  //  return view('agregar-organizaciones');
-//})->name('organizaciones');
+Route::get('/registrar-titulados', 'TituladoController@index');
+Route::post('/registrar-titulados', 'TituladoController@store')->name('registrar-titulados');
 
-Route::get('/registrar-titulados', function () {
-    return view('registrar-titulados');
-});
-
-Route::post('/registrar-titulados', function () {
-    return view('registrar-titulados');
-});
-
-Route::get('/registrar-titulacion-convenio', function () {
-    return view('registrar-titulacion-convenio');
-});
-
-Route::post('/registrar-titulacion-convenio', function () {
-    return view('registrar-titulacion-convenio');
-});
+Route::get('/registrar-titulacion-convenio', 'ActividadTitulacionController@index');
+Route::post('/registrar-titulacion-convenio', 'ActividadTitulacionController@store')->name('registrar-titulacion-convenio');
