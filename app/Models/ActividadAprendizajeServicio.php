@@ -13,7 +13,7 @@ class ActividadAprendizajeServicio extends Model
 
     public function actividad(){
         return $this->belongsTo(Actividad::class,
-            'id');
+            'actividad_id');
 
     }
 

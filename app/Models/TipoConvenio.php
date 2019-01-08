@@ -10,7 +10,8 @@ class TipoConvenio extends Model
     protected $fillable = ['nombre'];
 
     public function convenios(){
-       return $this->hasMany(Convenio::class);
+       return $this->hasMany(Convenio::class,
+           'tipo_convenios_id');
 
     }
 }

@@ -8,6 +8,8 @@ class Expositor extends Model
 {
     protected $table = 'expositores';
 
+    protected $fillable = ['nombre'];
+
     public function actividadExtensiones(){
         return $this->belongsToMany(ActividadExtension::class,
             'actividad_extensones_expositores',

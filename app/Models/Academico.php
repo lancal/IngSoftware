@@ -21,8 +21,9 @@ class Academico extends Model
     public function actividadTitulacion(){
         return $this->belongsToMany(ActividadTitulacion::class,
             'actividad_titulacion_academicos',
-            'academico_rut',
-            'act_titul_actividad_id');
+            'act_titul_actividad_id',
+            'academico_rut');
+
 
 
 
@@ -38,6 +39,7 @@ class Academico extends Model
 
     public function actividadAprendizajeServicios(){
         return $this->hasMany(ActividadAprendizajeServicio::class,
+            'actividad_id',
             'academico_rut');
 
     }
