@@ -24,7 +24,7 @@
                             <div class="form-group {{ $errors->has('nombreEmpresa') ? ' has-error' : '' }}">
                                 <label for="nombreEmpresa">Nombre Empresa u Organización (*)</label>
                                 <input class="form-control" name="nombreEmpresa" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                       placeholder="Ejemplo: Nombre Empresa" required autofocus>
+                                       placeholder="Ingrese Nombre de la Empresa o Organización" required autofocus>
                                 @if ($errors->has('nombreEmpresa'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nombreEmpresa') }}</strong>
@@ -38,7 +38,7 @@
                             <div class="form-group {{ $errors->has('responsable') ? ' has-error' : '' }}">
                                 <label for="responsable">Responsable (*)</label>
                                 <input class="form-control" name="responsable" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" required autofocus
-                                       placeholder="Ejemplo: Felipe Rivera">
+                                       placeholder="Ingrese Nombre del Responsable">
                                 @if ($errors->has('responsable'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('responsable') }}</strong>
@@ -52,7 +52,7 @@
                             <div class="form-group {{ $errors->has('rutEmpresa') ? ' has-error' : '' }}">
                                 <label for="rutEmpresa">R.U.T Empresa</label>
                                 <input S class="form-control" name="rutEmpresa" required autofocus
-                                       placeholder="Ejemplo: 123456789-0">
+                                       placeholder="Ingrese RUT de la Empresa">
                                 @if ($errors->has('rutEmpresa'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('rutEmpresa') }}</strong>

@@ -15,6 +15,9 @@
         </br>
     </div>
 
+
+
+
     <div class="container col-md-6">
         <div class="card">
             <h4 class="card-header"> Registrar Convenios de Colaboración</h4>
@@ -24,13 +27,12 @@
                     <form onsubmit="return alert('Agregado Exitosamente');" autocomplete="off">
                         {{ csrf_field() }}
 
-
                         <div class="col-md-12">
                             <div class="form-row" >
                                 <div class="form-group col-md-9 {{ $errors->has('nombreEmpresa') ? ' has-error' : '' }}">
                                     <label for="nombreEmpresa">Nombre Empresa u Organización (*)</label>
                                     <input class="form-control" id="nombreEmpresa" name="nombreEmpresa"
-                                           placeholder="Ejemplo: Nombre Empresa" required autofocus>
+                                           placeholder="Ingrese Nombre de la Empresa" required autofocus>
 
                                     @if ($errors->has('nombreEmpresa'))
                                         <span class="help-block">
@@ -41,7 +43,7 @@
 
                                 <div class="form-group col-md-3 ">
                                     <label for="nombreEmpresa">Si no se encuentra:</label>
-                                    <a href="{{ route('agregar-organizaciones') }}" class="btn btn-success">Agregar</a>
+                                    <a href="{{ route('agregar-organizaciones') }}" class="btn btn-secondary">Agregar</a>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +85,7 @@
                             <div class="form-group {{ $errors->has('duracion') ? ' has-error' : '' }}">
                                 <label for="duracion">Duracion Convenio</label>
                                 <input type="Fecha" class="form-control" id="duracion" name="duracion"
-                                       placeholder="Ejemplo: 2 años" required autofocus>
+                                       placeholder="Ingrese Duracion del Convenio" required autofocus>
                             </div>
                         </div>
                         <hr>

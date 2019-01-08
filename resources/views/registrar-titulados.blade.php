@@ -3,18 +3,15 @@
 
 
 @section('tittle')
-    <title>Registrar Actividad de Extensión</title>
+    <title>Registrar Titulados</title>
 
 @endsection
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
-<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 @section('form')
 </br>
 
 <div class="container ">
-    <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+    <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver al Menú Principal</a>
+
     </br>
 </div>
 
@@ -31,7 +28,7 @@
                             <label for="nombre">Nombre Titulado (*)</label>
 
                             <input class="form-control" id="nombre" name="nombre"
-                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ejemplo: Sebastián Arancibia" required autofocus>
+                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre del Estudiante" required autofocus>
 
                             @if ($errors->has('nombre'))
                                 <span class="help-block">
@@ -46,7 +43,7 @@
 
                             <label for="rut"> R.U.T (*) </label>
                             <input class="form-control" id="rut" name="rut"
-                                   placeholder="Ejemplo: 112335489-k" required autofocus >
+                                   placeholder="Ingrese RUT del Estudiante" required autofocus >
 
                             @if ($errors->has('rut'))
                                 <span class="help-block">
@@ -111,7 +108,7 @@
                             <label for="telefono">Telefono</label>
 
                             <input class="form-control" id="telefono" name="telefono"
-                                   placeholder="Ejemplo: +569 12345678">
+                                   placeholder="Ingrese Telefono del Estudiante">
 
                             @if ($errors->has('telefono'))
                                 <span class="help-block">
@@ -129,7 +126,9 @@
                             <label for="correo">Correo Electrónico</label>
 
 
-                            <input id="email" type="email" class="form-control" pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" name="email" value="{{ old('email') }}" placeholder="Ejemplo: correo@email.com">
+                            <input id="email" type="email" class="form-control"
+                                   pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"
+                                   name="email" value="{{ old('email') }}" placeholder="Ingrese Correo Electrónico del Estudiante">
 
                             @if ($errors->has('email'))
                                 <span class="help-block">
@@ -148,7 +147,7 @@
 
                             <label for="nombreEmpresa">Nombre Empresa</label>
                             <input class="form-control" id="nombreEmpresa" name="nombreEmpresa"
-                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ejemplo: Empresa S.A">
+                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre de la Empresa">
 
                             @if ($errors->has('nombreEmpresa'))
                                 <span class="help-block">

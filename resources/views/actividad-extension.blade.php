@@ -31,7 +31,7 @@
 
                             <input class="form-control" id="titulo" name="titulo"
                                    pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                   placeholder="Ejemplo: Actividad Extensión" required autofocus>
+                                   placeholder="Ingrese Título de la Actividad" required autofocus>
 
                             @if ($errors->has('titulo'))
                                 <span class="help-block">
@@ -48,7 +48,7 @@
 
 
                             <label for="descripcion">Decripción</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" maxlength="200" rows="3" required autofocus></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion" maxlength="200" rows="3"  placeholder="Ingrese Descripción de la Actividad" required autofocus></textarea>
 
 
                             @if ($errors->has('descripcion'))
@@ -60,22 +60,114 @@
                         </div>
                     </div>
 
+                    <hr>
+                    <div class="col-md-12 ">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label>&nbsp;Puede agregar hasta 4 Expositores. </label>
+                                <input class="btn btn-secondary" type="button" value="Agregar"
+                                       onClick="addRow('dataTable1')"/>
+                                <input class="btn btn-secondary" type="button" value="Eliminar"
+                                       onClick="removeSampleRow('dataTable1')"/>
 
-                    <div class="col-md-12">
-                        <div class="form-group {{ $errors->has('nombreExpositor') ? ' has-error' : '' }}">
+                            </div>
+                        </div>
 
-                            <label for="nombreExpositor">Nombre Expositor o Relator</label>
-                            <input class="form-control" id="nombreExpositor" name="nombreExpositor"
-                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                   placeholder="Ejemplo: Juan Pérez" required>
-
-                            @if ($errors->has('nombreExpositor'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('nombreExpositor') }}</strong>
-                                    </span>
-                            @endif
+                        <div class="form-row">
+                            <div class="col-md-0.5">
+                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="nombreExpositor">Nombre Expositor o Relator</label>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-md-12 ">
+
+
+                        <table id="dataTable1" class="table table-borderless">
+
+
+                            <tbody>
+                            <tr>
+                                <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                <td>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group {{ $errors->has('nombreExpositor') ? ' has-error' : '' }}">
+                                            <input class="form-control" id="nombreExpositor" name="nombreExpositor"
+                                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                                   placeholder="Ejemplo: Ingrese Nombre Expositor o Relator" required>
+
+                                            @if ($errors->has('nombreExpositor'))
+                                                <span class="help-block">
+                                        <strong>{{ $errors->first('nombreExpositor') }}</strong>
+                                    </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <hr>
+                    <div class="col-md-12 ">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label>&nbsp;Puede agregar hasta 4 Academicos Organizadores. </label>
+                                <input class="btn btn-secondary" type="button" value="Agregar"
+                                       onClick="addRow('dataTable')"/>
+                                <input class="btn btn-secondary" type="button" value="Eliminar"
+                                       onClick="removeSampleRow('dataTable')"/>
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-0.5">
+                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="organizador">Organizador Actividad</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ">
+
+
+                        <table id="dataTable" class="table table-borderless">
+
+
+                            <tbody>
+                            <tr>
+                                <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                <td>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group {{ $errors->has('organizador') ? ' has-error' : '' }}">
+
+
+                                            <input class="form-control" id="exampleFormControlInput1" name="organizador"
+                                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                                   placeholder="Ingrese Organizador de la Actividad" required autofocus>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <hr>
 
                     <div class="col-md-12">
                         <div class="form-group {{ $errors->has('fecha') ? ' has-error' : '' }}">
@@ -98,7 +190,7 @@
 
                             <label for="lugar">Lugar Actividad</label>
                             <input class="form-control" id="lugar" name="lugar"
-                                   placeholder="Ejemplo: K" required autofocus>
+                                   placeholder="Ingrese Lugar de la Actividad" required autofocus>
 
                             @if ($errors->has('lugar'))
                                 <span class="help-block">
@@ -152,15 +244,9 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="form-group {{ $errors->has('organizador') ? ' has-error' : '' }}">
 
-                            <label for="organizador">Organizador Actividad</label>
-                            <input class="form-control" id="exampleFormControlInput1" name="organizador"
-                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                   placeholder="Ejemplo: Nombre Empresa" required autofocus>
-                        </div>
-                    </div>
+
+
                     <hr>
                     <div class="col-md-12">
                         <div class="form-group">
@@ -193,3 +279,61 @@
 </div>
 </br></br>
 @endsection
+
+<script>function addRow(tableID) {
+        var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+        if(rowCount < 4){							// limit the user from creating fields more than your limits
+            var row = table.insertRow(rowCount);
+            var colCount = table.rows[0].cells.length;
+            for(var i=0; i<colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+            }
+        }else{
+            alert("Numero Máximo de Estudiantes es 4.");
+
+        }
+    }
+
+    function removeSampleRow(id) {
+        /***We get the table object based on given id ***/
+        var objTable = document.getElementById(id);
+
+        /*** Get the current row length ***/
+        var iRow = objTable.rows.length;
+
+        /*** Initial row counter ***/
+        var counter = 0;
+
+        /*** Performing a loop inside the table ***/
+        if (objTable.rows.length > 1) {
+            for (var i = 0; i < objTable.rows.length; i++) {
+
+                /*** Get checkbox object ***/
+                var chk = objTable.rows[i].cells[0].childNodes[0];
+                if (chk.checked) {
+                    /*** if checked we del ***/
+                    objTable.deleteRow(i);
+                    iRow--;
+                    i--;
+                    counter = counter + 1;
+                }
+            }
+
+            /*** Alert user if there is now row is selected to be deleted ***/
+            if (counter == 0) {
+
+
+                if(id == "dataTable"){alert("Seleccione el Academico Organizador que desea eliminar.");
+                }
+                if(id == "dataTable1"){alert("Seleccione el Expositor o Relator que desea eliminar.");}
+
+            }
+        }else{
+            /*** Alert user if there are no rows being added ***/
+
+            if(id == "dataTable"){ alert("Debe Agregar al menos 1 Academico Organizador.");;
+            }else if(id == "dataTable1"){alert("Debe Agregar al menos 1 Expositor o Relator.");}
+        }
+    }</script>

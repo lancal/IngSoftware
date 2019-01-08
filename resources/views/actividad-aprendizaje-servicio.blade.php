@@ -17,6 +17,10 @@
                 <div class="container">
                     <form>
                         {{ csrf_field() }}
+
+
+
+
                         <div class="col-md-12">
                             <div class="form-group{{ $errors->has('titulo') ? ' has-error' : '' }}">
 
@@ -24,7 +28,7 @@
 
                                 <input class="form-control" id="titulo" name="titulo"
                                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                       placeholder="Ejemplo: Actividad Extensión" required autofocus>
+                                       placeholder="Ingrese Título de la Actividad" required autofocus>
 
                                 @if ($errors->has('titulo'))
                                     <span class="help-block">
@@ -40,7 +44,7 @@
 
 
                                 <label for="descripcion">Decripción</label>
-                                <textarea class="form-control" id="descripcion" name="descripcion" maxlength="200" rows="3" required autofocus></textarea>
+                                <textarea class="form-control" id="descripcion" name="descripcion" maxlength="200" rows="3"  placeholder="Ingrese Descripción de la Actividad"required autofocus></textarea>
 
 
                                 @if ($errors->has('descripcion'))
@@ -57,7 +61,7 @@
                                 <label for="asignatura">Asignatura</label>
                                 <input class="form-control" id="asignatura"
                                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                       placeholder="Ejemplo: Programación 2" required autofocus>
+                                       placeholder="Ingrese Asignatura" required autofocus>
                                 @if ($errors->has('asignatura'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('asignatura') }}</strong>
@@ -66,23 +70,6 @@
                             </div>
                         </div>
 
-                        <hr>
-                        <div class="col-md-12">
-                            <div class="form-group" {{ $errors->has('nombreProfesor') ? ' has-error' : '' }}>
-
-                                <label for="nombreProfesor">Nombre Profesor</label>
-                                <input class="form-control" id="nombreProfesor" name="nombreProfesor"
-                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                       placeholder="Ejemplo: Victor Flores" required autofocus>
-
-                                @if ($errors->has('nombreProfesor'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nombreProfesor') }}</strong>
-                                    </span>
-                                @endif
-
-                            </div>
-                        </div>
                         <hr>
                         <div class="col-md-5">
                             <div class="form-group" {{ $errors->has('cantidad') ? ' has-error' : '' }}>
@@ -140,24 +127,120 @@
 
                             </div>
                         </div>
+                        <hr>
+                        <div class="col-md-12 ">
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <label>Puede agregar hasta 4 Profesores. </label>
+                                    <input class="btn btn-secondary" type="button" value="Agregar"
+                                           onClick="addRow('dataTable')"/>
+                                    <input class="btn btn-secondary" type="button" value="Eliminar"
+                                           onClick="removeSampleRow('dataTable')"/>
 
-                        <div class="col-md-12">
-                            <div class="form-group" {{ $errors->has('nombreSocioComunitario') ? ' has-error' : '' }}>
+                                </div>
+                            </div>
 
-                                <label for="nombreSocioComunitario">Nombre Socio Comunitario</label>
-                                <input class="form-control" id="nombreSocioComunitario" name="nombreSocioComunitario"
-                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ejemplo: K"
-                                       required autofocus>
-                                @if ($errors->has('nombreSocioComunitario'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nombreSocioComunitario') }}</strong>
-                                    </span>
-                                @endif
-
+                            <div class="form-row">
+                                <div class="col-md-0.5">
+                                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="rut">Nombre Profesor (*) </label>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-md-12 ">
 
 
+                            <table id="dataTable" class="table table-borderless">
+
+
+                                <tbody>
+                                <tr>
+                                    <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                    <td>
+
+                                        <div class="form-group" {{ $errors->has('nombreProfesor') ? ' has-error' : '' }}>
+                                            <input class="form-control" id="nombreProfesor" name="nombreProfesor"
+                                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                                   placeholder="Ingrese Nombre del Profesor" required autofocus>
+
+                                            @if ($errors->has('nombreProfesor'))
+                                                <span class="help-block">
+                                        <strong>{{ $errors->first('nombreProfesor') }}</strong>
+                                    </span>
+                                            @endif
+
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                        <hr>
+                        <div class="col-md-12 ">
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <label>&nbsp;Puede agregar hasta 4 Socios Comunitarios. </label>
+                                    <input class="btn btn-secondary" type="button" value="Agregar"
+                                           onClick="addRow('dataTable1')"/>
+                                    <input class="btn btn-secondary" type="button" value="Eliminar"
+                                           onClick="removeSampleRow('dataTable1')"/>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-0.5">
+                                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="nombreSocioComunitario">Nombre Socio Comunitario</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 ">
+
+
+                            <table id="dataTable1" class="table table-borderless">
+
+
+                                <tbody>
+                                <tr>
+                                    <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                    <td>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group" {{ $errors->has('nombreSocioComunitario') ? ' has-error' : '' }}>
+
+
+                                                <input class="form-control" id="nombreSocioComunitario" name="nombreSocioComunitario"
+                                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre del Socio Comunitario"
+                                                       required autofocus>
+                                                @if ($errors->has('nombreSocioComunitario'))
+                                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nombreSocioComunitario') }}</strong>
+                                    </span>
+                                                @endif
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                        <hr>
                         <div class="col-md-12">
                             <div class="form-row">
                                 <div class="form-group col-md-5" {{ $errors->has('semestre') ? ' has-error' : '' }}>
@@ -212,12 +295,64 @@
                         </div>
                         </br>
                     </form>
-
-                    <hr>
                 </div>
+                <hr>
             </div>
         </div>
+    </div>
     </div>
     </br></br>
 @endsection
 
+
+
+<script>function addRow(tableID) {
+        var table = document.getElementById(tableID);
+        var rowCount = table.rows.length;
+        if(rowCount < 4){							// limit the user from creating fields more than your limits
+            var row = table.insertRow(rowCount);
+            var colCount = table.rows[0].cells.length;
+            for(var i=0; i<colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+            }
+        }else{
+            alert("Numero Máximo de Estudiantes es 4.");
+
+        }
+    }
+
+    function removeSampleRow(id) {
+        /***We get the table object based on given id ***/
+        var objTable = document.getElementById(id);
+
+        /*** Get the current row length ***/
+        var iRow = objTable.rows.length;
+
+        /*** Initial row counter ***/
+        var counter = 0;
+
+        /*** Performing a loop inside the table ***/
+        if (objTable.rows.length > 1) {
+            for (var i = 0; i < objTable.rows.length; i++) {
+
+                /*** Get checkbox object ***/
+                var chk = objTable.rows[i].cells[0].childNodes[0];
+                if (chk.checked) {
+                    /*** if checked we del ***/
+                    objTable.deleteRow(i);
+                    iRow--;
+                    i--;
+                    counter = counter + 1;
+                }
+            }
+
+            /*** Alert user if there is now row is selected to be deleted ***/
+            if (counter == 0) {
+                alert("Seleccione el Estudiante que desea eliminar.");
+            }
+        }else{
+            /*** Alert user if there are no rows being added ***/
+            alert("Debe Agregar al menos 1 Estudiante.");
+        }
+    }</script>
