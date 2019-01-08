@@ -22,7 +22,7 @@ class CreateActividadAprendizajeServiciosTable extends Migration
             $table->unsignedInteger('actividad_id');
             $table->string('academico_rut',255);
             $table->foreign('actividad_id')->references('id')->on('actividades');
-            $table->foreign('academico_rut')->references('id')->on('academicos');
+            $table->foreign('academico_rut')->references('rut')->on('academicos');
             $table->timestamps();
         });
 

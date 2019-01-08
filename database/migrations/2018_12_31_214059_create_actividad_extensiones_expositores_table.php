@@ -15,10 +15,10 @@ class CreateActividadExtensionesExpositoresTable extends Migration
     {
         Schema::create('actividad_extensiones_expositores', function (Blueprint $table) {
 
-            $table->unsignedInteger('act_ext_actividad_id');
             $table->unsignedInteger('expositor_id');
+            $table->unsignedInteger('act_ext_actividad_id');
             $table->foreign('expositor_id')->references('id')->on('expositores');
-            $table->foreign('act_ext_actividad_id')->references('id')->on('actividad_extensiones');
+            $table->foreign('act_ext_actividad_id')->references('actividad_id')->on('actividad_extensiones');
             $table->timestamps();
 
         });

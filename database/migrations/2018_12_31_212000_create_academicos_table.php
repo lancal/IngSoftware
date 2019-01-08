@@ -17,7 +17,7 @@ class CreateAcademicosTable extends Migration
 
             $table->string('rut',255)->primary()->unique();
             $table->string('nombre',255);
-            $table->string('tipo_academico_id',255);
+            $table->unsignedInteger('tipo_academico_id');
             $table->foreign('tipo_academico_id')->references('id')->on('tipo_academicos');
 
             $table->timestamps();

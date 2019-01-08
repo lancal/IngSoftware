@@ -13,26 +13,27 @@ class CreateActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividades', function (Blueprint $table) {
 
-            $table->increments('id')->primary()->unique();
-            $table->text('descripcion');
-            $table->string('titulo',255);
-            $table->unsignedInteger('cantidad_asistentes')->nullable();
-            $table->unsignedInteger('convenio_id')->nullable();
-            $table->foreign('convenio_id')->references('id')->on('convenios');
-            $table->timestamps();
+            Schema::create('actividades', function (Blueprint $table) {
+
+                $table->increments('id');
+                $table->unsignedInteger('convenio_id');
+                $table->text('descripcion');
+                $table->string('titulo', 255);
+                $table->unsignedInteger('cantidad_asistentes');
+
+                $table->foreign('convenio_id')->references('id')->on('convenios');
+                //$table->foreign('id')->references('id')->on('convenios');
+
+                $table->timestamps();
 
 
-        });
+            });
+
 
 
         Schema::table('actividades', function (Blueprint $table) {
-//
-//            $table->foreign('convenio_id')
-//                  ->references('tipo_convenio_id')
-//                  ->on('convenios')
-//                  ->onDelete('cascade');
+
             $table->dropForeign(['convenio_id']);
         });
 

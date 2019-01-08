@@ -12,20 +12,37 @@ class CreateConvenios extends Migration
      * @return void
      */
     public function up()
+
+
     {
-        Schema::create('convenios', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre',255);
-            $table->unsignedInteger('duracion');
-            $table->date('fecha_inicio');
-            $table->unsignedInteger('tipo_convenio_id');
-            $table->string('organizacion_rut',255);
-            $table->timestamps();
 
 
 
+            Schema::create('convenios', function (Blueprint $table) {
 
-        });
+                $table->increments('id');
+                $table->string('nombre', 255);
+                $table->date('fecha_inicio');
+                $table->unsignedInteger('duracion');
+                $table->string('organizacion_rut', 255);
+                $table->unsignedInteger('tipo_convenio_id');
+                $table->foreign('tipo_convenio_id')->references('id')->on('tipo_convenios');
+                $table->foreign('organizacion_rut')->references('rut')->on('organizaciones');
+                //$table->foreign('id')->references('convenio_id')->on('actividades');
+
+
+                $table->timestamps();
+            });
+
+            Schema::table('convenios', function (Blueprint $table) {
+
+                $table->dropForeign(['tipo_convenio_id']);
+                $table->dropForeign(['organizacion_rut']);
+
+            });
+
+
+
     }
 
     /**

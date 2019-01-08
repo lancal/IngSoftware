@@ -17,8 +17,9 @@ class Role extends Model
         return $this->belongsToMany(
             User::class,
             'Role_User',
-            'Role_id',
-            'User_id');
+            'User_id',
+            'Role_id');
+
     }
 
 }

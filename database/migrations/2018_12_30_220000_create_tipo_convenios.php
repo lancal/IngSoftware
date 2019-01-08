@@ -13,11 +13,15 @@ class CreateTipoConvenios extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_convenios', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre',255);
-            $table->timestamps();
-        });
+            Schema::create('tipo_convenios', function (Blueprint $table) {
+
+                $table->increments('id');
+                $table->unsignedInteger('tipo_convenios_id')->unique();
+                $table->string('nombre', 255);
+                //$table->foreign('tipo_convenios_id')->references('tipo_convenio_id')->on('convenios');
+                $table->timestamps();
+            });
+
     }
 
     /**

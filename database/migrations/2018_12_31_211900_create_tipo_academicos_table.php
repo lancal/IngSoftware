@@ -20,14 +20,6 @@ class CreateTipoAcademicosTable extends Migration
             $table->timestamps();
 
         });
-
-//        Schema::table('academicos',function (Blueprint $table){
-//            $table->dropColumn(['tipo_academico']);
-//            $table->unsignedInteger('tipo_academico_id');
-//            $table->foreign('tipo_academico_id')
-//                ->references('id')
-//                ->on('tipo_academicos');
-//        });
     }
 
     /**
