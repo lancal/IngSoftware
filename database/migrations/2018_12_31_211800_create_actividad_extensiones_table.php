@@ -14,17 +14,21 @@ class CreateActividadExtensionesTable extends Migration
     public function up()
     {
         Schema::create('actividad_extensiones', function (Blueprint $table) {
-            $table->timestamps();
+
             $table->string('lugar',255);
             $table->date('fecha_realizacion');
-            $table->unsignedInteger('actividad_id')->primary();
+            $table->unsignedInteger('actividad_id');
+            $table->foreign('actividad_id')->references('id')->on('actividades');
+            $table->timestamps();
         });
 
-        Schema::table('actividad_extensiones',function (Blueprint $table){
-            $table->foreign('actividad_id')
-                ->references('id')
-                ->on('actividades');
+        Schema::table('actividad_extensiones', function (Blueprint $table) {
+
+            $table->dropForeign(['actividad_id']);
+
         });
+
+
     }
 
     /**

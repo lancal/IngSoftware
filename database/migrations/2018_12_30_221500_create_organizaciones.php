@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableModifyEvidencias extends Migration
+class CreateOrganizaciones extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class TableModifyEvidencias extends Migration
      */
     public function up()
     {
-        Schema::table('evidencias',function (Blueprint $table){
-            $table->increments('id');
+        Schema::create('organizaciones', function (Blueprint $table) {
+            $table->string('rut',255)->primary()->unique();
+            $table->string('nombre',255);
+            $table->string('responsable',255);
+            $table->timestamps();
+
+
         });
     }
 
@@ -25,6 +30,6 @@ class TableModifyEvidencias extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('organizaciones');
     }
 }

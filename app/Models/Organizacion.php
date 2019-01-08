@@ -11,4 +11,10 @@ class Organizacion extends Model
     public $incrementing = false;
 
     protected $fillable = ['rut','nombre','responsable'];
+
+    public function convenios(){
+        return $this->hasMany(Convenio::class,
+            'organizacion_rut');
+
+    }
 }

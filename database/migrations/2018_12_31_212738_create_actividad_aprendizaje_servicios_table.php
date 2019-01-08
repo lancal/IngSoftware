@@ -14,19 +14,23 @@ class CreateActividadAprendizajeServiciosTable extends Migration
     public function up()
     {
         Schema::create('actividad_aprendizaje_servicios', function (Blueprint $table) {
-            $table->timestamps();
+
             $table->string('asignatura');
             $table->unsignedInteger('cantidad_estudiantes');
             $table->unsignedInteger('anio');
             $table->unsignedInteger('semestre');
             $table->unsignedInteger('actividad_id');
-            $table->string('academico_rut',13);
+            $table->string('academico_rut',255);
+            $table->foreign('actividad_id')->references('id')->on('actividades');
+            $table->foreign('academico_rut')->references('rut')->on('academicos');
+            $table->timestamps();
         });
 
         Schema::table('actividad_aprendizaje_servicios',function (Blueprint $table){
-            $table->foreign('actividad_id')
-                ->references('id')
-                ->on('actividades');
+
+            $table->dropForeign(['actividad_id']);
+            $table->dropForeign(['academico_rut']);
+
         });
     }
 

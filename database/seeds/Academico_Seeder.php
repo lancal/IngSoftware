@@ -32,14 +32,14 @@ class Academico_Seeder extends Seeder
         Academico::create([
             'rut'	=> '171065666',
             'nombre'	=> 'Alan',
-            'tipo_academico_id' =>   '1',
+            'tipo_academico_id' =>   1,
             //$academico_actividad_extension->Academico()->attach($academico_actividad_extension)
         ]);
 
         Academico::create([
             'rut'	=> '192539001',
             'nombre'	=> 'Pedro',
-            'tipo_academico_id' =>   '2',
+            'tipo_academico_id' =>   2,
             //$academico_actividad_extension->Academico()->attach($academico_actividad_extension)
         ]);
 

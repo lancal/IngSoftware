@@ -13,16 +13,33 @@ class CreateActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividades', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-            $table->text('descripcion');
-            $table->string('titulo',255);
-            $table->unsignedInteger('cantidad_asistentes')->nullable();
-            $table->unsignedInteger('convenio_id')->nullable();
+
+            Schema::create('actividades', function (Blueprint $table) {
+
+                $table->increments('id');
+                $table->unsignedInteger('convenio_id');
+                $table->text('descripcion');
+                $table->string('titulo', 255);
+                $table->unsignedInteger('cantidad_asistentes');
+
+                $table->foreign('convenio_id')->references('id')->on('convenios');
+                //$table->foreign('id')->references('id')->on('convenios');
+
+                $table->timestamps();
 
 
+            });
+
+
+
+        Schema::table('actividades', function (Blueprint $table) {
+
+            $table->dropForeign(['convenio_id']);
         });
+
+
+
+
     }
 
     /**
@@ -32,6 +49,6 @@ class CreateActividadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividads');
+        Schema::dropIfExists('actividades');
     }
 }

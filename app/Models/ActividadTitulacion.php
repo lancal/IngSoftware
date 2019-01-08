@@ -12,7 +12,8 @@ use Illuminate\Database\Eloquent\Model;
         protected $fillable = ['fecha_inicio','fecha_termino','lugar'];
 
         public function actividad(){
-            return $this->belongsTo(Actividad::class);
+            return $this->belongsTo(Actividad::class,
+                'actividad_id');
 
     }
 

@@ -14,20 +14,22 @@ class CreateEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('estudiantes', function (Blueprint $table) {
+
             $table->string('rut',13)->primary()->unique();
-            $table->timestamps();
             $table->string('nombre',255);
             $table->string('carrera');
             $table->unsignedInteger('actividad_titulaciones_actividad_id');
+            $table->foreign('actividad_titulaciones_actividad_id')->references('actividad_id')->on('actividad_titulaciones');
+            $table->timestamps();
 
 
         });
 
         Schema::table('estudiantes',function (Blueprint $table){
-             $table->foreign('actividad_titulaciones_actividad_id')
-                 ->references('actividad_id')
-                 ->on('actividad_titulaciones');
-    });
+
+            $table->dropForeign(['actividad_titulaciones_actividad_id']);
+
+        });
     }
 
     /**

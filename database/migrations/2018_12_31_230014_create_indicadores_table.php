@@ -14,13 +14,14 @@ class CreateIndicadoresTable extends Migration
     public function up()
     {
         Schema::create('indicadores', function (Blueprint $table) {
+
             $table->increments('id');
-            $table->timestamps();
             $table->string('nombre',255);
             $table->text('descripcion');
             $table->text('formula');
             $table->double('meta');
             $table->string('tipo_evidencia',255);
+            $table->timestamps();
         });
     }
 

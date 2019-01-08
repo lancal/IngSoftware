@@ -21,22 +21,35 @@ class Tipo_Academico_Seeder extends Seeder
         //$academico = Academico::where('rut', 'nombre','tipo_academico_id')->first();
 
 
-        /**
-         *
-         * Crea un Jefe de Carrera
-         *
-         */
-        $tipoacademico = new TipoAcademico();
-        $tipoacademico->nombre = 'Jefe de Carrera';
-        //$tipoacademico->academicos()->attach($academico);
+        TipoAcademico::create([
+            'nombre'	=> 'Jefe de Carrera',
+            //'tipo_academico_id' =>   1,
+            //$academico_actividad_extension->Academico()->attach($academico_actividad_extension)
+        ]);
 
-        /**
-         *
-         * Crea un Encargado de Vinculacion
-         *
-         */
-        $tipoacademico = new TipoAcademico();
-        $tipoacademico->nombre = 'Encargado de Vinculacion';
-        //$tipoacademico->academicos()->attach($academico);
+        TipoAcademico::create([
+            'nombre'	=> 'Encargado de Vinculacion',
+            //'tipo_academico_id' =>   1,
+            //$academico_actividad_extension->Academico()->attach($academico_actividad_extension)
+        ]);
+
+
+//        /**
+//         *
+//         * Crea un Jefe de Carrera
+//         *
+//         */
+//        $tipoacademico = new TipoAcademico();
+//        $tipoacademico->nombre = 'Jefe de Carrera';
+//        //$tipoacademico->academicos()->attach($academico);
+//
+//        /**
+//         *
+//         * Crea un Encargado de Vinculacion
+//         *
+//         */
+//        $tipoacademico = new TipoAcademico();
+//        $tipoacademico->nombre = 'Encargado de Vinculacion';
+//        //$tipoacademico->academicos()->attach($academico);
     }
 }

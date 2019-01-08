@@ -10,6 +10,8 @@ class TipoAcademico extends Model
     protected $fillable = ['nombre'];
 
     public function academicos(){
-        return $this->hasMany(Academico::class);
+
+        return $this->hasMany(Academico::class,
+            'tipo_academico_id');
     }
 }

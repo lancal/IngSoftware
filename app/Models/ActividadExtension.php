@@ -12,20 +12,23 @@ class ActividadExtension extends Model
     protected $fillable = ['lugar','fecha_realizacion','actividad_id'];
 
     public function actividad(){
-        return $this->belongsTo(Actividad::class);
+        return $this->belongsTo(Actividad::class,
+            'actividad_id');
     }
 
-    public function actividadExtensiones(){
+    public function academico(){
         return $this->belongsToMany(Academico::class,
             'academico_actividad_extensiones',
-            'act_ext_actividad_id',
-            'academico_rut');
+            'academico_rut',
+            'act_ext_actividad_id'
+            );
     }
 
     public function expositores(){
         return $this->belongsToMany(Expositor::class,
             'actividad_extensiones_expositores',
-            'act_ext_actividad_id',
-            'expositor_id');
+            'expositor_id',
+            'act_ext_actividad_id'
+            );
     }
 }

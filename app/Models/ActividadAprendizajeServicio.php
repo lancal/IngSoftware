@@ -12,12 +12,14 @@ class ActividadAprendizajeServicio extends Model
     protected $fillable = ['asignatura','cantidad_estudiantes','anio','semestre','actividad_id','academico_rut'];
 
     public function actividad(){
-        return $this->belongsTo(Actividad::class);
+        return $this->belongsTo(Actividad::class,
+            'actividad_id');
 
     }
 
     public function academico(){
-        return $this->belongsTo(Academico::class);
+        return $this->belongsTo(Academico::class,
+            'rut');
 
     }
 }
