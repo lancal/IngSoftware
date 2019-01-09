@@ -27,7 +27,7 @@
                                 <label for="titulo">Título Actividad (*)</label>
 
                                 <input class="form-control" id="titulo" name="titulo"
-                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*[0-9]*"
                                        placeholder="Ingrese Título de la Actividad" required autofocus>
 
                                 @if ($errors->has('titulo'))
@@ -338,7 +338,7 @@
 
                 /*** Get checkbox object ***/
                 var chk = objTable.rows[i].cells[0].childNodes[0];
-                if (chk.checked) {
+                if (chk.checked&& (iRow-1)>0) {
                     /*** if checked we del ***/
                     objTable.deleteRow(i);
                     iRow--;
