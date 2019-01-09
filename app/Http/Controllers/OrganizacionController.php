@@ -15,6 +15,7 @@ class OrganizacionController extends Controller
      */
     public function index()
     {
+
         return view('agregar-organizaciones');
     }
 
@@ -36,7 +37,12 @@ class OrganizacionController extends Controller
      */
     public function store(Request $request)
     {
-        return view('agregar-organizaciones');
+
+        $organizacion = Organizacion::create($request->all());
+
+
+        return redirect()->route('agregar-organizaciones')
+            ->with('info','Se agrego con exito la Organización');
     }
 
     /**

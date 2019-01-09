@@ -15,19 +15,19 @@
             <h4 class="card-header"> Registrar Organizaciones o Empresas</h4>
             <div class="card-body">
                 <div class="container">
-                    <form name="form" onsubmit="return Valida_Rut(form.rutEmpresa)" action="{{ route('agregar-organizaciones') }}" method="POST" role="form" autocomplete="off">
+                    <form name="form" onsubmit="return Valida_Rut(form.rut)" action="{{ route('agregar-organizaciones') }}" method="POST" role="form" autocomplete="off">
                         {{ csrf_field() }}
 
 
 
                         <div class="col-md-12">
-                            <div class="form-group {{ $errors->has('nombreEmpresa') ? ' has-error' : '' }}">
-                                <label for="nombreEmpresa">Nombre Empresa u Organización (*)</label>
-                                <input class="form-control" name="nombreEmpresa" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                            <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }}">
+                                <label for="nombre">Nombre Empresa u Organización (*)</label>
+                                <input class="form-control" name="nombre" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
                                        placeholder="Ingrese Nombre de la Empresa o Organización" required autofocus>
-                                @if ($errors->has('nombreEmpresa'))
+                                @if ($errors->has('nombre'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nombreEmpresa') }}</strong>
+                                        <strong>{{ $errors->first('nombre') }}</strong>
                                     </span>
                                 @endif
 
@@ -49,35 +49,19 @@
                         </div>
 
                         <div class="col-md-12">
-                            <div class="form-group {{ $errors->has('rutEmpresa') ? ' has-error' : '' }}">
-                                <label for="rutEmpresa">R.U.T Empresa</label>
-                                <input S class="form-control" name="rutEmpresa" required autofocus
+                            <div class="form-group {{ $errors->has('rut') ? ' has-error' : '' }}">
+                                <label for="rut">R.U.T Empresa</label>
+                                <input S class="form-control" name="rut" required autofocus
                                        placeholder="Ingrese RUT de la Empresa">
-                                @if ($errors->has('rutEmpresa'))
+                                @if ($errors->has('rut'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('rutEmpresa') }}</strong>
+                                        <strong>{{ $errors->first('rut') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group {{ $errors->has('tipoEmpresa') ? ' has-error' : '' }}">
-                                <label for="tipoEmpresa">Tipo Empresa (*)</label>
-                                <select class="form-control" id="tipoEmpresa" name="tipoEmpresa" required autofocus>
-                                    <option value="">Elija una opción</option>
-                                    <option>Empresa</option>
-                                    <option>Organización</option>
-                                </select>
 
-                                @if ($errors->has('tipoEmpresa'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tipoEmpresa') }}</strong>
-                                    </span>
-                                @endif
-
-                            </div>
-                        </div>
 
                         <label for="subtituloForm">(*) Campo obligatorio.</label>
                         </br>
