@@ -55,7 +55,7 @@
                         <h5 class="card-title">Actividad de Extensión</h5>
                         <p class="card-text"></p>
                         <a href="{{ route('actividad-extension') }}" class="btn btn-primary">Registrar</a>
-                        <a href="#" class="btn btn-primary">Ver Listado</a>
+                        <a href="{{ route('listarActividadesExtension') }}" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,8 @@
     <title>Listar Organizaciones</title>
 
 @endsection
-@section('contenido')</br>
+@section('contenido')
+    </br>
     <div class="container">
 
         <div class="card">
@@ -17,18 +18,24 @@
                         <th> Nombre</th>
                         <th> Responsable</th>
                         <th> Rut</th>
-                        <th> Tipo Empresa</th>
+                        {{--<th> Tipo Empresa</th>--}}
+
+
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($organizacion as $organizaciones)
-                        <tr>
-                            <td> {{$organizaciones->nombre}}         </td>
-                            <td> {{$organizaciones->responsable}}    </td>
-                            <td> {{$organizaciones->rut}}            </td>
-                            <td> {{$organizaciones->tipoEmpresa}}    </td>
 
-                        </tr>
+                    <?php $organizaciones = App\Models\Organizacion::all();?>
+
+                    @foreach($organizaciones as $organizacion)
+                        {{--<tr>--}}
+                        <td> {{$organizacion->rut}}            </td>
+                        <td> {{$organizacion->nombre}}         </td>
+                        <td> {{$organizacion->responsable}}    </td>
+
+                            {{--<td> {{$organizacion->tipoEmpresa}}    </td>--}}
+
+                        {{--</tr>--}}
                     @endforeach
                     </tbody>
                 </table>

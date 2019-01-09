@@ -47,7 +47,7 @@ class ActividadExtensionController extends Controller
      */
     public function show(ActividadExtension $actividadExtension)
     {
-        //
+        return view('listarActividadesExtension');
     }
 
     /**
