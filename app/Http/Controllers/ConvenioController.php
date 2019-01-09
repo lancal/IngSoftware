@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Organizacion;
 use Illuminate\Http\Request;
 
 use App\Models\Convenio;
@@ -68,9 +69,10 @@ class ConvenioController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Convenio $convenio)
+    public function update(Request $request, $id)
     {
         //
+
     }
 
     /**
@@ -79,8 +81,9 @@ class ConvenioController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Convenio $convenio)
+    public function destroy($id)
     {
         //
+
     }
 }

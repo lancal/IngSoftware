@@ -1,46 +1,49 @@
 @extends('plantillaGeneral')
 
 @section('tittle')
-    <title>Listar Organizaciones</title>
+    <title>Listado Organizaciones</title>
 
 @endsection
 @section('contenido')
     </br>
     <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
 
-        <div class="card">
-            <h4 class="card-header"> Listado de Organizaciones</h4>
-            <div class="card-body">
-                <table>
-                    <thead>
-                    <tr>
+                    <div class="panel-body">
+                        <h1 class="display-4">Organizaciones</h1>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th >#Rut Empresa:</th>
+                                <th scope="col" >Nombre Empresa:</th>
+                                <th scope="col"  >Nombre Responsable:</th>
+                                <th colspan="3">&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                        <th> Nombre</th>
-                        <th> Responsable</th>
-                        <th> Rut</th>
-                        {{--<th> Tipo Empresa</th>--}}
+                            @foreach($organizaciones as $item)
+                                <tr>
+                                    <th>{{$item->rut}}</th>
+                                    <td>{{$item->nombre}}</td>
+                                    <td>{{$item->responsable}}</td>
 
 
-                    </tr>
-                    </thead>
-                    <tbody>
+                                </tr>
+                            @endforeach
 
-                    <?php $organizaciones = App\Models\Organizacion::all();?>
+                            </tbody>
+                        </table>
 
-                    @foreach($organizaciones as $organizacion)
-                        {{--<tr>--}}
-                        <td> {{$organizacion->rut}}            </td>
-                        <td> {{$organizacion->nombre}}         </td>
-                        <td> {{$organizacion->responsable}}    </td>
 
-                            {{--<td> {{$organizacion->tipoEmpresa}}    </td>--}}
-
-                        {{--</tr>--}}
-                    @endforeach
-                    </tbody>
-                </table>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+
 
 @endsection
