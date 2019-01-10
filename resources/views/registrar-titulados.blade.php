@@ -106,15 +106,24 @@
                         <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }}">
 
                             <label for="telefono">Telefono</label>
+                            <div class="form-row">
 
-                            <input class="form-control" id="telefono" name="telefono"
-                                   placeholder="Ingrese Telefono del Estudiante">
+                                <div class="col-md-2">
+                                    <font size="3" >+569</font>
+                                </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="telefono" name="telefono"
+                                           pattern="([1-9])[0-9]{7}"
+                                           placeholder="Ejemplo: 12345678">
 
-                            @if ($errors->has('telefono'))
-                                <span class="help-block">
+                                    @if ($errors->has('telefono'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('telefono') }}</strong>
                                     </span>
-                            @endif
+                                    @endif
+                                </div>
+
+                            </div>
 
                         </div>
                     </div>

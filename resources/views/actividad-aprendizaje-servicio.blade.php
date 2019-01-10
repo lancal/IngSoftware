@@ -320,7 +320,7 @@
             if($tipo=='socio'){
                 alert("Numero Máximo de Socios Comunitarios es 4.");
             }else{
-                alert("Numero Máximo de Estudiantes es 4.");
+                alert("Numero Máximo de Profesores es 4.");
             }
 
         }
@@ -356,7 +356,7 @@
                 if($tipo=='socio'){
                     alert("Seleccione el Socio Comunitario que desea eliminar.");
                 }else{
-                    alert("Seleccione el Estudiante que desea eliminar.");
+                    alert("Seleccione el Profesor que desea eliminar.");
                 }
             }
         }else{
@@ -364,7 +364,7 @@
             if($tipo=='socio'){
                 alert("Debe Agregar al menos 1 Socio Comunitario.");
             }else{
-                alert("Debe Agregar al menos 1 Estudiante.");
+                alert("Debe Agregar al menos 1 Profesor.");
             }
         }
     }</script>
