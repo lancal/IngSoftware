@@ -253,7 +253,6 @@
                 Objeto.focus()
                 return false;
             }
-            alert('El Rut Ingresado es Correcto!')
             Objeto.focus()
             return true;
         }
