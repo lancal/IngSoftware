@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @yield('tittle')
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <!-- Fonts -->
     <link href=https://use.typekit.net/ynl5gwa.css" rel="stylesheet" type="text/css">
