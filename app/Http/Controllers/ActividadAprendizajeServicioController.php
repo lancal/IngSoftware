@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\ActividadAprendizajeServicio;
 
+use App\Models;
+
 class ActividadAprendizajeServicioController extends Controller
 {
     /**
@@ -15,7 +17,10 @@ class ActividadAprendizajeServicioController extends Controller
      */
     public function index()
     {
-        return view('actividad-aprendizaje-servicio');
+
+        $academic=Models\Academico::all();
+
+        return view('actividad-aprendizaje-servicio',compact('academic'));
     }
 
     /**

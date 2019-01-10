@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\App;
 
 class OrganizacionController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +21,7 @@ class OrganizacionController extends Controller
     public function index()
     {
 
-        return view('agregar-organizaciones');
+        return view('admin.organizacion.agregar-organizaciones');
     }
 
     /**
@@ -28,6 +31,7 @@ class OrganizacionController extends Controller
      */
     public function create()
     {
+        return view('admin.organizacion.agregar-organizaciones');
 
     }
 
@@ -41,9 +45,9 @@ class OrganizacionController extends Controller
     {
 
         $organizacion = Organizacion::create($request->all());
+        $rut = $organizacion->rut;
 
-
-        return redirect()->route('addOrganizacion.edit')
+        return redirect()->route('organizaciones.edit',$rut)
             ->with('info','Se agrego con exito la Organización');
     }
 
@@ -56,7 +60,7 @@ class OrganizacionController extends Controller
     public function show()
     {
         $organizaciones = Organizacion::all();
-        return view('organizationList',compact('organizaciones'));
+        return view('admin.organizacion.organizationList',compact('organizaciones'));
     }
 
     /**
@@ -71,7 +75,7 @@ class OrganizacionController extends Controller
         $org = Organizacion::find($rut);
 
 
-        return view('agregar-organizaciones',compact('org'));
+        return view('admin.organizacion.edit',compact('org'));
     }
 
     /**
@@ -87,7 +91,7 @@ class OrganizacionController extends Controller
         $org = Organizacion::find($rut);
         $org->fill($request->all())->save();
 
-        return redirect()->route('addOrganizacion.edit')
+        return redirect()->route('organizaciones.edit',compact('org'))
             ->with('info','organizacion actualizada con exito');
     }
 
@@ -101,6 +105,7 @@ class OrganizacionController extends Controller
     {
 
         $org = Organizacion::find($rut)->delete();
-        return back()->with('info','ELIMINADO CORRECTAMENTE');
+
+        return back()->with('info', 'Eliminado Correctamente');
     }
 }

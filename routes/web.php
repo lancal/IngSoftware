@@ -50,7 +50,12 @@ Route::post('/convenios','ConvernioController@store')->name('convenios');
 Route::get('/agregar-organizaciones', 'OrganizacionController@index');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
 Route::delete('/delete-organizaciones', 'OrganizacionController@destroy')->name('delete-organizaciones');
-Route::get('/edit-organizaciones', 'OrganizacionController@edit')->name('edit-organizaciones');
+Route::resource('organizaciones', 'OrganizacionController');
+
+
+
+
+
 
 Route::get('/organizationList', 'OrganizacionController@show')->name('organizationList');
 

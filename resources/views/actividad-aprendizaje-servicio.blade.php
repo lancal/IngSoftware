@@ -161,9 +161,17 @@
                                     <td>
 
                                         <div class="form-group" {{ $errors->has('nombreProfesor') ? ' has-error' : '' }}>
-                                            <input class="form-control" id="nombreProfesor" name="nombreProfesor"
+                                            <!--input class="form-control" id="nombreProfesor" name="nombreProfesor"
                                                    pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                                   placeholder="Ingrese Nombre del Profesor" required autofocus>
+                                                   placeholder="Ingrese Nombre del Profesor" required autofocus-->
+                                            <select class="form-control" name="nombreProfesor" id="nombreProfesor"
+                                                    pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                                    placeholder="Ingrese Nombre del Profesor" required autofocus>
+                                                @foreach($academic as $tipo)
+                                                    <option value="{{$tipo->rut}}">{{$tipo->nombre}}</option>
+                                                @endforeach
+                                            </select>
+
 
                                             @if ($errors->has('nombreProfesor'))
                                                 <span class="help-block">

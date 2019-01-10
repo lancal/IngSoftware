@@ -31,6 +31,22 @@
                                     <td>{{$item->responsable}}</td>
 
 
+                                    <td >
+                                        <a href="{{route('organizaciones.edit',$item->rut )}}" class="btn btn-sm btn-link">
+                                            Editar
+                                        </a>
+                                    </td>
+
+                                    <td >
+
+                                        <form action="{{route('organizaciones.destroy',$item->rut)}}" method="POST">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </form>
+
+
+                                    </td>
                                 </tr>
                             @endforeach
 
