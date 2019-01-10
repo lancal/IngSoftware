@@ -59,7 +59,7 @@ Route::get('/listarActividadesExtension', 'ActividadExtensionController@show')->
 Route::post('/actividad-extension', 'ActividadExtensionController@store')->name('actividad-extension');
 
 Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index');
-Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
+Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@store')->name('actividad-aprendizaje-servicio');
 
 Route::get('/registrar-titulados', 'TituladoController@index');
 Route::post('/registrar-titulados', 'TituladoController@store')->name('registrar-titulados');

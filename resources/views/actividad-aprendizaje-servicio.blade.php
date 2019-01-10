@@ -15,7 +15,7 @@
             <h4 class="card-header">Registrar Actividad Aprendizaje + Servicio</h4>
             <div class="card-body">
                 <div class="container">
-                    <form>
+                    <form name="form"  action="{{ route('actividad-aprendizaje-servicio') }}" method="POST" role="form" autocomplete="off">
                         {{ csrf_field() }}
 
 
@@ -133,9 +133,9 @@
                                 <div class="col-md-12">
                                     <label>Puede agregar hasta 4 Profesores. </label>
                                     <input class="btn btn-secondary" type="button" value="Agregar"
-                                           onClick="addRow('dataTable')"/>
+                                           onClick="addRow('dataTable','socio')"/>
                                     <input class="btn btn-secondary" type="button" value="Eliminar"
-                                           onClick="removeSampleRow('dataTable')"/>
+                                           onClick="removeSampleRow('dataTable','socio')"/>
 
                                 </div>
                             </div>
@@ -188,9 +188,9 @@
                                 <div class="col-md-12">
                                     <label>&nbsp;Puede agregar hasta 4 Socios Comunitarios. </label>
                                     <input class="btn btn-secondary" type="button" value="Agregar"
-                                           onClick="addRow('dataTable1')"/>
+                                           onClick="addRow('dataTable1','socio')"/>
                                     <input class="btn btn-secondary" type="button" value="Eliminar"
-                                           onClick="removeSampleRow('dataTable1')"/>
+                                           onClick="removeSampleRow('dataTable1','socio')"/>
 
                                 </div>
                             </div>
@@ -306,7 +306,7 @@
 
 
 
-<script>function addRow(tableID) {
+<script>function addRow(tableID,$tipo) {
         var table = document.getElementById(tableID);
         var rowCount = table.rows.length;
         if(rowCount < 4){							// limit the user from creating fields more than your limits
@@ -317,12 +317,16 @@
                 newcell.innerHTML = table.rows[0].cells[i].innerHTML;
             }
         }else{
-            alert("Numero Máximo de Estudiantes es 4.");
+            if($tipo=='socio'){
+                alert("Numero Máximo de Socios Comunitarios es 4.");
+            }else{
+                alert("Numero Máximo de Estudiantes es 4.");
+            }
 
         }
     }
 
-    function removeSampleRow(id) {
+    function removeSampleRow(id,$tipo) {
         /***We get the table object based on given id ***/
         var objTable = document.getElementById(id);
 
@@ -349,10 +353,18 @@
 
             /*** Alert user if there is now row is selected to be deleted ***/
             if (counter == 0) {
-                alert("Seleccione el Estudiante que desea eliminar.");
+                if($tipo=='socio'){
+                    alert("Seleccione el Socio Comunitario que desea eliminar.");
+                }else{
+                    alert("Seleccione el Estudiante que desea eliminar.");
+                }
             }
         }else{
             /*** Alert user if there are no rows being added ***/
-            alert("Debe Agregar al menos 1 Estudiante.");
+            if($tipo=='socio'){
+                alert("Debe Agregar al menos 1 Socio Comunitario.");
+            }else{
+                alert("Debe Agregar al menos 1 Estudiante.");
+            }
         }
     }</script>
