@@ -133,9 +133,9 @@
                                 <div class="col-md-12">
                                     <label>Puede agregar hasta 4 Profesores. </label>
                                     <input class="btn btn-secondary" type="button" value="Agregar"
-                                           onClick="addRow('dataTable','socio')"/>
+                                           onClick="addRow('dataTable','profesor')"/>
                                     <input class="btn btn-secondary" type="button" value="Eliminar"
-                                           onClick="removeSampleRow('dataTable','socio')"/>
+                                           onClick="removeSampleRow('dataTable','profesor')"/>
 
                                 </div>
                             </div>
