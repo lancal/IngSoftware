@@ -38,7 +38,7 @@ class TituladoController extends Controller
     public function store(Request $request)
     {
         if (Titulado::where('rut', $request->rut , Input::get('rut'))->exists()) {
-            return redirect()->route('admin.titulado.registrar-titulados');
+            return view ('registrar-titulados');
         }else{
 
             $titulado= new Titulado;
@@ -50,7 +50,7 @@ class TituladoController extends Controller
             $titulado->anio=$request->get('anioTitulacion');
             $titulado->carrera=$request->get('carrera');
             $titulado->save();
-            return redirect()->route('admin.titulado.registrar-titulados');
+            return view ('registrar-titulados');
         }
     }
 
