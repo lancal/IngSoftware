@@ -63,7 +63,7 @@ class ActividadAprendizajeServicioController extends Controller
                 'actividad_aprendizaje_servicios.anio as year','actividad_aprendizaje_servicios.semestre as sem' ,'academicos.nombre as name')->get();
 
 
-        return view('listar-actividad-aprendizaje-servicios',compact('aprendizaje'));
+        return view('admin.actividadAprendizajeServicio.listar-actividad-aprendizaje-servicios',compact('aprendizaje'));
     }
 
     /**

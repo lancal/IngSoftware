@@ -10,6 +10,7 @@
         <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
