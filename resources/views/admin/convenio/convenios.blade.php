@@ -98,6 +98,7 @@
                             <div class="form-group {{ $errors->has('duracion') ? ' has-error' : '' }}">
                                 <label for="duracion">Duracion Convenio</label>
                                 <input type="Fecha" class="form-control" id="duracion" name="duracion"
+                                       pattern="[1-9]+[0-9]*"
                                        placeholder="Ingrese Duracion del Convenio" required autofocus>
                             </div>
                         </div>
