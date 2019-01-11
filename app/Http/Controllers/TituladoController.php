@@ -14,6 +14,10 @@ class TituladoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('registrar-titulados');
@@ -38,19 +42,20 @@ class TituladoController extends Controller
     public function store(Request $request)
     {
         if (Titulado::where('rut', $request->rut , Input::get('rut'))->exists()) {
-            return view ('registrar-titulados');
+            return back()->with('info','El alumno titulado ya existe');
         }else{
 
             $titulado= new Titulado;
             $titulado->rut=$request->get('rut');
             $titulado->nombre=$request->get('nombre');
-            $titulado->telefono='+569'.($request->get('telefono'));
+            $titulado->telefono=$request->get('telefono');
             $titulado->correo=$request->get('email');
-            $titulado->empresa=$request->get('cantidad');
+            $titulado->empresa=$request->get('nombreEmpresa');
             $titulado->anio=$request->get('anioTitulacion');
             $titulado->carrera=$request->get('carrera');
             $titulado->save();
-            return view ('registrar-titulados');
+            return back()
+                ->with('info','Se agrego con exito el alumno titulado');
         }
     }
 
@@ -75,8 +80,7 @@ class TituladoController extends Controller
     public function edit($rut)
     {
         $titulados =Titulado::find($rut);
-
-        return view('titulados.edit',compact('titulados'));
+        return view('admin.titulado.edit',compact('titulados'));
     }
 
     /**
@@ -90,8 +94,7 @@ class TituladoController extends Controller
     {
         $titulados = Titulado::find($rut);
         $titulados->fill($request->all())->save();
-
-        return redirect()->route('titulados.edit',compact('titulados'))
+        return redirect()->route('titulados.index',compact('titulados'))
             ->with('info','alumno titulado actualizado con exito');
     }
 

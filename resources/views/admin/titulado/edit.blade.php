@@ -20,15 +20,17 @@
         <h4 class="card-header">Registrar Titulados</h4>
         <div class="card-body">
             <div class="container">
-                <form name="form"  onsubmit="return Valida_Rut(form.rut)" method="POST" action="{{ route('registrar-titulados') }}" autocomplete="off">
+                <form name="form"  onsubmit="return Valida_Rut(form.rut)" method="POST" action="{{ route('titulados.update',$titulados->rut) }}" autocomplete="off">
                     {{ csrf_field() }}
+                    {!! method_field('PUT') !!}
                     <div class="col-md-12">
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
 
                             <label for="nombre">Nombre Titulado (*)</label>
 
                             <input class="form-control" id="nombre" name="nombre"
-                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre del Estudiante" required autofocus>
+                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                   placeholder="Ingrese Nombre del Estudiante" required autofocus value="{{$titulados->nombre}}">
 
                             @if ($errors->has('nombre'))
                                 <span class="help-block">
@@ -43,7 +45,7 @@
 
                             <label for="rut"> R.U.T (*) </label>
                             <input class="form-control" id="rut" name="rut"
-                                   placeholder="Ingrese RUT del Estudiante" required autofocus >
+                                   placeholder="Ingrese RUT del Estudiante" required autofocus value="{{$titulados->rut}}">
 
                             @if ($errors->has('rut'))
                                 <span class="help-block">
@@ -58,7 +60,7 @@
                         <div class="form-group {{ $errors->has('anioTitulacion') ? ' has-error' : '' }}">
 
                             <label for="anioTitulacion">Año Titulación (*)</label>
-                            <select class="form-control" id="anioTitulacion" name="anioTitulacion" required autofocus>
+                            <select class="form-control" id="anioTitulacion" name="anioTitulacion" required autofocus >
                                 <option value="">Elija una opción</option>
                                 <option>2010</option>
                                 <option>2011</option>
@@ -85,7 +87,7 @@
                         <div class="form-group {{ $errors->has('carrera') ? ' has-error' : '' }}">
 
                             <label for="carrera">Carrera (*)</label>
-                            <select class="form-control" id="carrera" name="carrera" required autofocua>
+                            <select class="form-control" id="carrera" name="carrera" required autofocua ">
                                 <option value="">Elija una opción</option>
                                 <option>Ingeniería Civil en Computación e Informatica</option>
                                 <option>Ingeniería de Ejecución en Computación e Informatica</option>
@@ -114,7 +116,7 @@
                                 <div class="col-md-10">
                                     <input class="form-control" id="telefono" name="telefono"
                                            pattern="([1-9])[0-9]{7}"
-                                           placeholder="Ejemplo: 12345678">
+                                           placeholder="Ejemplo: 12345678" value="{{$titulados->telefono}}">
 
                                     @if ($errors->has('telefono'))
                                         <span class="help-block">
@@ -137,7 +139,7 @@
 
                             <input id="email" type="email" class="form-control"
                                    pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"
-                                   name="email" value="{{ old('email') }}" placeholder="Ingrese Correo Electrónico del Estudiante">
+                                   name="email" value="{{$titulados->correo}}" placeholder="Ingrese Correo Electrónico del Estudiante">
 
                             @if ($errors->has('email'))
                                 <span class="help-block">
@@ -156,7 +158,7 @@
 
                             <label for="nombreEmpresa">Nombre Empresa</label>
                             <input class="form-control" id="nombreEmpresa" name="nombreEmpresa"
-                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre de la Empresa">
+                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre de la Empresa" value="{{$titulados->empresa}}">
 
                             @if ($errors->has('nombreEmpresa'))
                                 <span class="help-block">
