@@ -55,9 +55,15 @@ class ActividadAprendizajeServicioController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(ActividadAprendizajeServicio $actividadAprendizajeServicio)
+    public function show()
     {
-        //
+        $aprendizaje =ActividadAprendizajeServicio::join('actividades','actividades.id','=','actividad_aprendizaje_servicios.actividad_id')
+            ->join('academicos','academicos.rut','=','actividad_aprendizaje_servicios.academico_rut')
+            ->select('actividades.titulo as title','actividades.descripcion as desc','actividades.cantidad_asistentes as cantAsistentes','actividad_aprendizaje_servicios.asignatura as asig',
+                'actividad_aprendizaje_servicios.anio as year','actividad_aprendizaje_servicios.semestre as sem' ,'academicos.nombre as name')->get();
+
+
+        return view('listar-actividad-aprendizaje-servicios',compact('aprendizaje'));
     }
 
     /**

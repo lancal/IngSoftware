@@ -281,8 +281,8 @@
 
 
 <script>
-    function addRow(tableID) {
-        var table = document.getElementById(tableID);
+    function addRow(id) {
+        var table = document.getElementById(id);
         var rowCount = table.rows.length;
         if(rowCount < 4){// limit the user from creating fields more than your limits
             var row = table.insertRow(rowCount);
@@ -292,12 +292,12 @@
                 newcell.innerHTML = table.rows[0].cells[i].innerHTML;
             }
         }else{
-            if(TableID=='dataTable1'){
+
+            if(id=='dataTable1'){
                 alert("Numero Máximo de Socios Comunitarios es 4.");
             }else{
                 alert("Numero Máximo de Profesores es 4.");
             }
-
         }
     }
 

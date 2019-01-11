@@ -69,6 +69,9 @@ Route::post('/actividad-extension', 'ActividadExtensionController@store')->name(
 
 Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index');
 Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@store')->name('actividad-aprendizaje-servicio');
+Route::get('/listar-actividad-aprendizaje-servicios', 'ActividadAprendizajeServicioController@show')->name('actividadAprendizajeServiciosList');
+Route::resource('actividadAprendizajeServicios', 'ActividadAprendisajeServicioController');
+Route::delete('/delete-actividad-aprendizaje-servicios', 'TituladosController@destroy')->name('delete-actividad-aprendizaje-servicios');
 
 Route::get('/registrar-titulados','TituladoController@index');
 Route::post('/registrar-titulados','TituladoController@store')->name('registrar-titulados');
