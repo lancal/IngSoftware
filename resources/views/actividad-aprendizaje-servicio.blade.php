@@ -126,7 +126,7 @@
                                             <select class="form-control" name="rutProfesor" id="rutProfesor"
                                                     pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
                                                     placeholder="Ingrese un Profesor" required autofocus>
-                                                <option></option>
+                                                <option>Seleccione un profesor</option>
                                                 @foreach($academic as $tipo)
                                                     <option value="{{$tipo->rut}}">{{$tipo->nombre}} |  RUT: {{$tipo->rut}}</option>
                                                 @endforeach
@@ -189,7 +189,7 @@
                                                 <select class="form-control" id="nombreSocioComunitario" name="nombreSocioComunitario"
                                                         pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre del Socio Comunitario"
                                                         required autofocus>
-                                                    <option></option>
+                                                    <option>Seleccione un socio comunitario</option>
                                                     @foreach($dato as $tipe)
                                                         <option value="{{$tipe->id}}">{{$tipe->nombreOrganizacion}}</option>
                                                     @endforeach
