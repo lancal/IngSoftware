@@ -45,7 +45,7 @@
                         <h5 class="card-title">Convenios de Colaboración</h5>
                         <p class="card-text"></p>
                         <a href="{{ route('convenios') }}" class="btn btn-primary">Registrar</a>
-                        <a href="#" class="btn btn-primary">Ver Listado</a>
+                        <a href="{{ route('listarConvenios')}}" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>

@@ -45,12 +45,17 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
 
 Route::get('/convenios', 'ConvenioController@index');
-Route::post('/convenios','ConvernioController@store')->name('convenios');
+Route::post('/convenios','ConvenioController@store')->name('convenios');
+Route::get('listarConvenios','ConvenioController@show')->name('listarConvenios');
+Route::resource('convenio','ConvenioController');
+Route::get('listarConvenio/{id}','ConvenioController@mostrarConvenio')->name('listarConvenio');
+
 
 Route::get('/agregar-organizaciones', 'OrganizacionController@index');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
 Route::delete('/delete-organizaciones', 'OrganizacionController@destroy')->name('delete-organizaciones');
 Route::resource('organizaciones', 'OrganizacionController');
+
 
 
 
