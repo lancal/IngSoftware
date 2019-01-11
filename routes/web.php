@@ -59,9 +59,6 @@ Route::resource('organizaciones', 'OrganizacionController');
 
 
 
-
-
-
 Route::get('/organizationList', 'OrganizacionController@show')->name('organizationList');
 
 Route::get('/actividad-extension', 'ActividadExtensionController@index');
@@ -71,8 +68,11 @@ Route::post('/actividad-extension', 'ActividadExtensionController@store')->name(
 Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index');
 Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@store')->name('actividad-aprendizaje-servicio');
 
-Route::get('/registrar-titulados', 'TituladoController@index');
-Route::post('/registrar-titulados', 'TituladoController@store')->name('registrar-titulados');
+Route::get('/registrar-titulados','TituladoController@index');
+Route::post('/registrar-titulados','TituladoController@store')->name('registrar-titulados');
+Route::get('/lista-itulados', 'TituladoController@show')->name('tituladoList');
+Route::resource('titulados', 'TituladoController');
+Route::delete('/delete-titulados', 'TituladosController@destroy')->name('delete-titulados');
 
 Route::get('/registrar-titulacion-convenio', 'ActividadTitulacionController@index');
 Route::post('/registrar-titulacion-convenio', 'ActividadTitulacionController@store')->name('registrar-titulacion-convenio');

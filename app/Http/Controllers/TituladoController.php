@@ -38,7 +38,7 @@ class TituladoController extends Controller
     public function store(Request $request)
     {
         if (Titulado::where('rut', $request->rut , Input::get('rut'))->exists()) {
-            return redirect()->route('registrar-titulados');
+            return redirect()->route('admin.titulado.registrar-titulados');
         }else{
 
             $titulado= new Titulado;
@@ -50,7 +50,7 @@ class TituladoController extends Controller
             $titulado->anio=$request->get('anioTitulacion');
             $titulado->carrera=$request->get('carrera');
             $titulado->save();
-            return redirect()->route('registrar-titulados');
+            return redirect()->route('admin.titulado.registrar-titulados');
         }
     }
 
@@ -62,7 +62,7 @@ class TituladoController extends Controller
      */
     public function show(Titulado $titulado)
     {
-        //
+        return view('listarTitulados',compact('titulados'));
     }
 
     /**
@@ -71,9 +71,11 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titulado $titulado)
+    public function edit($rut)
     {
-        //
+        $titulados = titulados::find($rut);
+
+        return view('titulados.edit',compact('titulados'));
     }
 
     /**
@@ -83,9 +85,13 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titulado $titulado)
+    public function update(Request $request, $rut)
     {
-        //
+        $titulados = Organizacion::find($rut);
+        $titulados->fill($request->all())->save();
+
+        return redirect()->route('titulados.edit',compact('titulados'))
+            ->with('info','alumno titulado actualizado con exito');
     }
 
     /**
@@ -94,8 +100,9 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titulado $titulado)
+    public function destroy($rut)
     {
-        //
+        $titulados = titulados::find($rut)->delete();
+        return back()->with('info', 'Eliminado Correctamente');
     }
 }
