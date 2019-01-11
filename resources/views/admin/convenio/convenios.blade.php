@@ -105,9 +105,9 @@
                         <hr>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Evidencia: Archivo (.pdf) del Texto con Firmas del
+                                <label for="evidencia">Evidencia: Archivo (.pdf) del Texto con Firmas del
                                     Convenio</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" id="evidencia" name="evidencia" required=>
                             </div>
                         </div>
                         <hr>
