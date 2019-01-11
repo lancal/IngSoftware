@@ -50,6 +50,7 @@ Route::post('/convenios','ConvernioController@store')->name('convenios');
 Route::get('/agregar-organizaciones', 'OrganizacionController@index');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
 
+
 Route::get('/organizationList', 'OrganizacionController@show')->name('organizationList');
 
 Route::get('/actividad-extension', 'ActividadExtensionController@index');

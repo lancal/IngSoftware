@@ -60,7 +60,7 @@
 
                                 <label for="asignatura">Asignatura</label>
                                 <input class="form-control" id="asignatura"
-                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*[0-9]"
                                        placeholder="Ingrese Asignatura" required autofocus>
                                 @if ($errors->has('asignatura'))
                                     <span class="help-block">

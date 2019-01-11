@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Organizacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+
 
 
 class OrganizacionController extends Controller
@@ -15,6 +17,7 @@ class OrganizacionController extends Controller
      */
     public function index()
     {
+
         return view('agregar-organizaciones');
     }
 
@@ -36,7 +39,12 @@ class OrganizacionController extends Controller
      */
     public function store(Request $request)
     {
-        return view('agregar-organizaciones');
+
+        $organizacion = Organizacion::create($request->all());
+
+
+        return redirect()->route('agregar-organizaciones')
+            ->with('info','Se agrego con exito la Organización');
     }
 
     /**
@@ -45,9 +53,10 @@ class OrganizacionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(Organizacion $organizacion)
+    public function show()
     {
-        return view('organizationList');
+        $organizaciones = Organizacion::all();
+        return view('organizationList',compact('organizaciones'));
     }
 
     /**
@@ -56,9 +65,13 @@ class OrganizacionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function edit(Organizacion $organizacion)
+    public function edit($rut)
     {
         //
+        $org = Organizacion::find($rut);
+
+
+        return view('agregar-organizaciones',compact('org'));
     }
 
     /**
@@ -68,9 +81,14 @@ class OrganizacionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Organizacion $organizacion)
+    public function update(Request $request, $rut)
     {
         //
+        $org = Organizacion::find($rut);
+        $org->fill($request->all())->save();
+
+        return redirect()->route('agregar-organizaciones')
+            ->with('info','organizacion actualizada con exito');
     }
 
     /**
@@ -79,8 +97,10 @@ class OrganizacionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Organizacion $organizacion)
+    public function destroy($rut)
     {
         //
+        $org = Organizacion::find($rut)->delete();
+        return back()->with('info','ELIMINADO CORRECTAMENTE');
     }
 }
