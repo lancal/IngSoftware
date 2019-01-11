@@ -36,7 +36,26 @@ class EvidenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'evidencia' => 'required|mimes:pdf|max:4096',
+            'evidenciaFotos.*' => 'file|mimes:jpeg,jpg|max:10000'
+
+        ]);
+
+        $foldername = $request->titulo.'_'.$request->fechaInicio;
+
+        $filename = $request->file('evidencia')->store($foldername);
+
+        $evidencias = array(Evidencia::create(['ruta' => $filename,
+            'tipo' => 'pdf']));
+        if($request->file('evidenciaFotos') != null) {
+            foreach ($request->file('evidenciaFotos') as $file) {
+                $filename = $file->store($foldername);
+                array_push($evidencias, Evidencia::create(['ruta' => $filename, 'tipo' => 'jpg']));
+            }
+        }
+
+        return $evidencias;
     }
 
     /**

@@ -45,10 +45,21 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
 
 Route::get('/convenios', 'ConvenioController@index');
-Route::post('/convenios','ConvernioController@store')->name('convenios');
+Route::post('/convenios','ConvenioController@store')->name('convenios');
+Route::get('listarConvenios','ConvenioController@show')->name('listarConvenios');
+//Route::get('listarConvenios','ConvenioController@mostrarEvidencia')->name('evidencia'); //...
+Route::resource('convenio','ConvenioController');
+Route::get('listarConvenio/{id}','ConvenioController@mostrarConvenio')->name('listarConvenio');
+
+
 
 Route::get('/agregar-organizaciones', 'OrganizacionController@index');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
+Route::delete('/delete-organizaciones', 'OrganizacionController@destroy')->name('delete-organizaciones');
+Route::resource('organizaciones', 'OrganizacionController');
+
+
+
 
 
 Route::get('/organizationList', 'OrganizacionController@show')->name('organizationList');
@@ -58,10 +69,14 @@ Route::get('/listarActividadesExtension', 'ActividadExtensionController@show')->
 Route::post('/actividad-extension', 'ActividadExtensionController@store')->name('actividad-extension');
 
 Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index');
-Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index')->name('actividad-aprendizaje-servicio');
+Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@store')->name('actividad-aprendizaje-servicio');
 
-Route::get('/registrar-titulados', 'TituladoController@index');
-Route::post('/registrar-titulados', 'TituladoController@store')->name('registrar-titulados');
+Route::get('/registrar-titulados','TituladoController@index');
+Route::post('/registrar-titulados','TituladoController@store')->name('registrar-titulados');
+Route::get('/listar-titulados', 'TituladoController@show')->name('tituladoList');
+Route::resource('titulados', 'TituladoController');
+Route::delete('/delete-titulados', 'TituladosController@destroy')->name('delete-titulados');
 
 Route::get('/registrar-titulacion-convenio', 'ActividadTitulacionController@index');
 Route::post('/registrar-titulacion-convenio', 'ActividadTitulacionController@store')->name('registrar-titulacion-convenio');
+

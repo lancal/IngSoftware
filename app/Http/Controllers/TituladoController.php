@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Titulado;
+use Illuminate\Support\Facades\Input;
 
 class TituladoController extends Controller
 {
@@ -36,7 +37,21 @@ class TituladoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Titulado::where('rut', $request->rut , Input::get('rut'))->exists()) {
+            return view ('registrar-titulados');
+        }else{
+
+            $titulado= new Titulado;
+            $titulado->rut=$request->get('rut');
+            $titulado->nombre=$request->get('nombre');
+            $titulado->telefono='+569'.($request->get('telefono'));
+            $titulado->correo=$request->get('email');
+            $titulado->empresa=$request->get('cantidad');
+            $titulado->anio=$request->get('anioTitulacion');
+            $titulado->carrera=$request->get('carrera');
+            $titulado->save();
+            return view ('registrar-titulados');
+        }
     }
 
     /**
@@ -45,9 +60,10 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(Titulado $titulado)
+    public function show()
     {
-        //
+        $titulados = Titulado::all();
+        return view('admin.titulado.listar-titulados',compact('titulados'));
     }
 
     /**
@@ -56,9 +72,11 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titulado $titulado)
+    public function edit($rut)
     {
-        //
+        $titulados =Titulado::find($rut);
+
+        return view('titulados.edit',compact('titulados'));
     }
 
     /**
@@ -68,9 +86,13 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titulado $titulado)
+    public function update(Request $request, $rut)
     {
-        //
+        $titulados = Titulado::find($rut);
+        $titulados->fill($request->all())->save();
+
+        return redirect()->route('titulados.edit',compact('titulados'))
+            ->with('info','alumno titulado actualizado con exito');
     }
 
     /**
@@ -79,8 +101,9 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titulado $titulado)
+    public function destroy($rut)
     {
-        //
+        $titulados = Titulado::find($rut)->delete();
+        return back()->with('info', 'Eliminado Correctamente');
     }
 }

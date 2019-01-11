@@ -5,6 +5,11 @@
 
 @endsection
 @section('contenido')
+    <br>
+    <div class="container ">
+        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        </br>
+    </div>
     </br>
     <div class="container">
         <div class="row">
@@ -12,13 +17,13 @@
                 <div class="panel panel-default">
 
                     <div class="panel-body">
-                        <h1 class="display-4">Acticidad de Titulación</h1>
+                        <h1 class="display-4">Organizaciones</h1>
                         <table class="table table-striped table-hover">
                             <thead>
                             <tr>
-                                <th width="15px">#Rut Empresa:</th>
-                                <th scope="col" width="15px">Nombre Empresa:</th>
-                                <th scope="col" width="15px" >Nombre Responsable:</th>
+                                <th >#Rut Empresa:</th>
+                                <th scope="col" >Nombre Empresa:</th>
+                                <th scope="col"  >Nombre Responsable:</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                             </thead>
@@ -31,20 +36,22 @@
                                     <td>{{$item->responsable}}</td>
 
 
-                                    <td width="10px">
-                                        <a href="{{route('agregar-organizaciones.edit',$item->rut )}}" class="btn btn-sm btn-default">
+                                    <td >
+                                        <a href="{{route('organizaciones.edit',$item->rut )}}" class="btn btn-sm btn-link">
                                             Editar
                                         </a>
                                     </td>
 
-                                    <td width="10px">
-                                        {!! Form::open(['route'=>['agregar-organizaciones.destroy',$item->rut], 'method' => 'DELETE']) !!}
-                                        <button class="btn btn-sm btn-danger">
-                                            Eliminar
-                                        </button>
-                                        {!! Form::close() !!}
-                                    </td>
+                                    <td >
 
+                                        <form action="{{route('organizaciones.destroy',$item->rut)}}" method="POST">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </form>
+
+
+                                    </td>
                                 </tr>
                             @endforeach
 

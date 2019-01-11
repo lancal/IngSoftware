@@ -30,4 +30,6 @@ class Convenio extends Model
             'convenio_id');
 
     }
+
+
 }
