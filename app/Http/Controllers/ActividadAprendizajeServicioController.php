@@ -19,8 +19,13 @@ class ActividadAprendizajeServicioController extends Controller
     {
 
         $academic=Models\Academico::all();
+        $dato=Models\Convenio::join('tipo_convenios','tipo_convenios.id','=','convenios.tipo_convenio_id')
+            ->join('organizaciones','organizaciones.rut','=','convenios.organizacion_rut')
+            ->where('tipo_convenios.nombre','=','A+S')
+            ->select('convenios.id as idConvenio','organizaciones.nombre as nombreOrganizacion','organizaciones.rut as rutOrganizacion')->get();
 
-        return view('actividad-aprendizaje-servicio',compact('academic'));
+
+        return view('actividad-aprendizaje-servicio',compact('academic'),compact('dato'));
     }
 
     /**

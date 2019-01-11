@@ -75,49 +75,9 @@
                             <div class="form-group" {{ $errors->has('cantidad') ? ' has-error' : '' }}>
 
                                 <label for="cantidad">Cantidad Estudiantes</label>
-                                <select class="form-control" id="cantidad" name="cantidad" required autofocus>
-                                    <option value="">Elija una opción</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                    <option>13</option>
-                                    <option>14</option>
-                                    <option>15</option>
-                                    <option>16</option>
-                                    <option>17</option>
-                                    <option>18</option>
-                                    <option>19</option>
-                                    <option>20</option>
-                                    <option>21</option>
-                                    <option>22</option>
-                                    <option>23</option>
-                                    <option>24</option>
-                                    <option>25</option>
-                                    <option>26</option>
-                                    <option>27</option>
-                                    <option>28</option>
-                                    <option>29</option>
-                                    <option>30</option>
-                                    <option>31</option>
-                                    <option>32</option>
-                                    <option>33</option>
-                                    <option>34</option>
-                                    <option>35</option>
-                                    <option>36</option>
-                                    <option>37</option>
-                                    <option>38</option>
-                                    <option>39</option>
-                                    <option>40</option>
-                                </select>
+                                <input class="form-control" id="cantidad" name="cantidad"
+                                       pattern="[1-9]+[0-9]*"
+                                       placeholder="Ingrese cantidad asistentes" required autofocus>
 
                                 @if ($errors->has('cantidad'))
                                     <span class="help-block">
@@ -130,15 +90,14 @@
                         <hr>
                         <div class="col-md-12 ">
                             <div class="form-row">
-                                <div class="col-md-12">
-                                    <label>Puede agregar hasta 4 Profesores. </label>
+                                <div class="col-md-11">
                                     <input class="btn btn-secondary" type="button" value="Agregar"
-                                           onClick="addRow('dataTable','profesor')"/>
+                                           onClick="addRow('dataTable')"/>
                                     <input class="btn btn-secondary" type="button" value="Eliminar"
-                                           onClick="removeSampleRow('dataTable','profesor')"/>
-
+                                           onClick="removeSampleRow('dataTable')"/>
+                                    <label>Puede agregar hasta 4 Profesores. </label>
                                 </div>
-                            </div>
+                            </div></br>
 
                             <div class="form-row">
                                 <div class="col-md-0.5">
@@ -160,22 +119,23 @@
                                     <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
                                     <td>
 
-                                        <div class="form-group" {{ $errors->has('nombreProfesor') ? ' has-error' : '' }}>
+                                        <div class="form-group" {{ $errors->has('rutProfesor') ? ' has-error' : '' }}>
                                             <!--input class="form-control" id="nombreProfesor" name="nombreProfesor"
                                                    pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
                                                    placeholder="Ingrese Nombre del Profesor" required autofocus-->
-                                            <select class="form-control" name="nombreProfesor" id="nombreProfesor"
+                                            <select class="form-control" name="rutProfesor" id="rutProfesor"
                                                     pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                                    placeholder="Ingrese Nombre del Profesor" required autofocus>
+                                                    placeholder="Ingrese un Profesor" required autofocus>
+                                                <option>Seleccione un profesor</option>
                                                 @foreach($academic as $tipo)
-                                                    <option value="{{$tipo->rut}}">{{$tipo->nombre}}</option>
+                                                    <option value="{{$tipo->rut}}">{{$tipo->nombre}} |  RUT: {{$tipo->rut}}</option>
                                                 @endforeach
                                             </select>
 
 
-                                            @if ($errors->has('nombreProfesor'))
+                                            @if ($errors->has('rutProfesor'))
                                                 <span class="help-block">
-                                        <strong>{{ $errors->first('nombreProfesor') }}</strong>
+                                        <strong>{{ $errors->first('rutProfesor') }}</strong>
                                     </span>
                                             @endif
 
@@ -193,43 +153,47 @@
                         <hr>
                         <div class="col-md-12 ">
                             <div class="form-row">
-                                <div class="col-md-12">
-                                    <label>&nbsp;Puede agregar hasta 4 Socios Comunitarios. </label>
+                                <div class="col-md-11">
                                     <input class="btn btn-secondary" type="button" value="Agregar"
-                                           onClick="addRow('dataTable1','socio')"/>
+                                           onClick="addRow('dataTable1')"/>
                                     <input class="btn btn-secondary" type="button" value="Eliminar"
-                                           onClick="removeSampleRow('dataTable1','socio')"/>
-
+                                           onClick="removeSampleRow('dataTable1')"/>
+                                    <label>Puede agregar hasta 4 Socios Comunitarios. </label>
                                 </div>
+                            </div></br>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-0.5">
+                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                             </div>
-
-                            <div class="form-row">
-                                <div class="col-md-0.5">
-                                    <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                </div>
-                                <div class="col-md-5">
-                                    <label for="nombreSocioComunitario">Nombre Socio Comunitario</label>
-                                </div>
+                            <div class="col-md-5">
+                                <label for="nombreSocioComunitario">Nombre Socio Comunitario</label>
+                            </div>
+                            <div class="col-md-0.5">
+                                <labe>                </labe>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="archivoAdjunto">Evidencia: Archivo (.pdf)</label>
                             </div>
                         </div>
-                        <div class="col-md-12 ">
 
-
-                            <table id="dataTable1" class="table table-borderless">
-
-
-                                <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
-                                    <td>
-
-                                        <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="col-md-12 ">
+                                <table id="dataTable1" class="table table-borderless" width="100%">
+                                    <tbody>
+                                    <tr>
+                                        <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                        <td >
                                             <div class="form-group" {{ $errors->has('nombreSocioComunitario') ? ' has-error' : '' }}>
 
-
-                                                <input class="form-control" id="nombreSocioComunitario" name="nombreSocioComunitario"
-                                                       pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre del Socio Comunitario"
-                                                       required autofocus>
+                                                <select class="form-control" id="nombreSocioComunitario" name="nombreSocioComunitario"
+                                                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*" placeholder="Ingrese Nombre del Socio Comunitario"
+                                                        required autofocus>
+                                                    <option>Seleccione un socio comunitario</option>
+                                                    @foreach($dato as $tipe)
+                                                        <option value="{{$tipe->id}}">{{$tipe->nombreOrganizacion}}</option>
+                                                    @endforeach
+                                                </select>
                                                 @if ($errors->has('nombreSocioComunitario'))
                                                     <span class="help-block">
                                         <strong>{{ $errors->first('nombreSocioComunitario') }}</strong>
@@ -237,15 +201,25 @@
                                                 @endif
 
                                             </div>
-                                        </div>
-                                    </td>
+
+                                            <div>
+
+                                            </div>
+                                        </td>
+
+                                        <td width="50%">
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
 
 
-                                </tr>
-                                </tbody>
-                            </table>
+                                        </td>
 
+                                    </tr>
+                                    </tbody>
+                                </table>
 
+                            </div>
+                            <hr>
+                            </br>
                         </div>
 
                         <hr>
@@ -288,14 +262,6 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Evidencia: Archivo (.pdf) Acuerdo Firmado por
-                                    Profesor Asignatura y Representante Socio Comunitario</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                            </div>
-                        </div>
-                        <hr>
                         </br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary" style="margin: 10px">Confirmar</button>
@@ -314,10 +280,11 @@
 
 
 
-<script>function addRow(tableID,$tipo) {
+<script>
+    function addRow(tableID) {
         var table = document.getElementById(tableID);
         var rowCount = table.rows.length;
-        if(rowCount < 4){							// limit the user from creating fields more than your limits
+        if(rowCount < 4){// limit the user from creating fields more than your limits
             var row = table.insertRow(rowCount);
             var colCount = table.rows[0].cells.length;
             for(var i=0; i<colCount; i++) {
@@ -325,7 +292,7 @@
                 newcell.innerHTML = table.rows[0].cells[i].innerHTML;
             }
         }else{
-            if($tipo=='socio'){
+            if(TableID=='dataTable1'){
                 alert("Numero Máximo de Socios Comunitarios es 4.");
             }else{
                 alert("Numero Máximo de Profesores es 4.");
@@ -334,7 +301,7 @@
         }
     }
 
-    function removeSampleRow(id,$tipo) {
+    function removeSampleRow(id) {
         /***We get the table object based on given id ***/
         var objTable = document.getElementById(id);
 
@@ -361,7 +328,7 @@
 
             /*** Alert user if there is now row is selected to be deleted ***/
             if (counter == 0) {
-                if($tipo=='socio'){
+                if(id=='dataTable1'){
                     alert("Seleccione el Socio Comunitario que desea eliminar.");
                 }else{
                     alert("Seleccione el Profesor que desea eliminar.");
@@ -369,7 +336,7 @@
             }
         }else{
             /*** Alert user if there are no rows being added ***/
-            if($tipo=='socio'){
+            if(id=='dataTable1'){
                 alert("Debe Agregar al menos 1 Socio Comunitario.");
             }else{
                 alert("Debe Agregar al menos 1 Profesor.");
