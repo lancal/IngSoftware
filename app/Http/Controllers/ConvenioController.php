@@ -61,7 +61,13 @@ class ConvenioController extends Controller
         $convenio->tipo_convenio_id = $request->tipo_convenio_id;
 
         $convenio->save();
-        $evidence = new Evidencia();
+        $evidenciaController = new EvidenciaController;
+
+        $evidencias = $evidenciaController->store($request,'convenio');
+
+        $evidencias[0]->convenio()->associate($convenio);
+
+        $evidencias[0]->save();
         
 
         $tipoConvenio=TipoConvenio::find($convenio->tipo_convenio_id);
