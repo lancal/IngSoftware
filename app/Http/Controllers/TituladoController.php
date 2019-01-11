@@ -60,9 +60,9 @@ class TituladoController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(Titulado $titulado)
+    public function show()
     {
-        return view('listarTitulados',compact('titulados'));
+        return view('listar-titulados',compact('titulados'));
     }
 
     /**
@@ -73,7 +73,7 @@ class TituladoController extends Controller
      */
     public function edit($rut)
     {
-        $titulados = titulados::find($rut);
+        $titulados =Titulado::find($rut);
 
         return view('titulados.edit',compact('titulados'));
     }
@@ -87,7 +87,7 @@ class TituladoController extends Controller
      */
     public function update(Request $request, $rut)
     {
-        $titulados = Organizacion::find($rut);
+        $titulados = Titulado::find($rut);
         $titulados->fill($request->all())->save();
 
         return redirect()->route('titulados.edit',compact('titulados'))
@@ -102,7 +102,7 @@ class TituladoController extends Controller
      */
     public function destroy($rut)
     {
-        $titulados = titulados::find($rut)->delete();
+        $titulados = Titulado::find($rut)->delete();
         return back()->with('info', 'Eliminado Correctamente');
     }
 }

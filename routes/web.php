@@ -70,7 +70,7 @@ Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioCont
 
 Route::get('/registrar-titulados','TituladoController@index');
 Route::post('/registrar-titulados','TituladoController@store')->name('registrar-titulados');
-Route::get('/lista-itulados', 'TituladoController@show')->name('tituladoList');
+Route::get('/listar-titulados', 'TituladoController@show')->name('tituladoList');
 Route::resource('titulados', 'TituladoController');
 Route::delete('/delete-titulados', 'TituladosController@destroy')->name('delete-titulados');
 
