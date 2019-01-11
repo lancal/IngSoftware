@@ -62,7 +62,8 @@ class TituladoController extends Controller
      */
     public function show()
     {
-        return view('listar-titulados',compact('titulados'));
+        $titulados = Titulado::all();
+        return view('admin.titulado.listar-titulados',compact('titulados'));
     }
 
     /**

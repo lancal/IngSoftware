@@ -47,8 +47,10 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 Route::get('/convenios', 'ConvenioController@index');
 Route::post('/convenios','ConvenioController@store')->name('convenios');
 Route::get('listarConvenios','ConvenioController@show')->name('listarConvenios');
+//Route::get('listarConvenios','ConvenioController@mostrarEvidencia')->name('evidencia'); //...
 Route::resource('convenio','ConvenioController');
 Route::get('listarConvenio/{id}','ConvenioController@mostrarConvenio')->name('listarConvenio');
+
 
 
 Route::get('/agregar-organizaciones', 'OrganizacionController@index');
