@@ -14,7 +14,7 @@ class CreateAcademicoActividadExtensionesTable extends Migration
     public function up()
     {
         Schema::create('academico_actividad_extensiones', function (Blueprint $table) {
-            $table->string('academico_rut',255)->unique();
+            $table->string('academico_rut',255);
             $table->unsignedInteger('act_ext_actividad_id');
             $table->foreign('academico_rut')->references('rut')->on('academicos');
             $table->foreign('act_ext_actividad_id')->references('actividad_id')->on('actividad_extensiones');
