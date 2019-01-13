@@ -8,6 +8,7 @@ class Actividad extends Model
 {
     protected $table = 'actividades';
     protected $fillable = ['convenio_id','descripcion','titulo','cantidad_asistentes'];
+    protected $attributes = ['borrado' => false];
 
 
     public function aprendizajeServicio(){
@@ -39,5 +40,24 @@ class Actividad extends Model
         return $this->belongsTo(Convenio::class,
             'convenio_id');
 
+    }
+
+
+    public function borrar(){
+        $this->borrado = true;
+        return $this->save();
+    }
+
+    public static function buscar($id){
+        return Actividad::findOrFail($id)->where('borrado','=','0')->get();
+    }
+
+    public static function todos(){
+        return Actividad::all()->where('borrado','=','0');
+    }
+
+    public function recuperar(){
+        $this->borrado = false;
+        return $this->save();
     }
 }

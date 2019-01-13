@@ -9,6 +9,7 @@ class Academico extends Model
     protected $table = 'academicos';
     protected $primaryKey = 'rut';
     public $incrementing = false;
+    protected $attributes = ['borrado' => false];
 
     protected $fillable = ['rut','nombre','tipo_academico_id'];
 
@@ -42,5 +43,23 @@ class Academico extends Model
             'actividad_id',
             'academico_rut');
 
+    }
+
+    public function borrar(){
+        $this->borrado = true;
+        return $this->save();
+    }
+
+    public static function buscar($id){
+        return Academico::findOrFail($id)->where('borrado','=','0')->get();
+    }
+
+    public static function todos(){
+        return Academico::all()->where('borrado','=','0')->get();
+    }
+
+    public function recuperar(){
+        $this->borrado = false;
+        return $this->save();
     }
 }
