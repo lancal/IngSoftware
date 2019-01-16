@@ -43,7 +43,7 @@ class Academico extends Model
             'act_apren_serv_academicos',
             'academico_rut',
             'act_apren_serv_aca_id',
-            'actividad_id');
+            null,'actividad_id');
 
     }
 
