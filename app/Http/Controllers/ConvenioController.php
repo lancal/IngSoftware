@@ -21,7 +21,14 @@ class ConvenioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(){
+
+        return view('convenio');
+
+    }
+
+    public function index2()
     {
         $org=Organizacion::all();
         $tipo_convenio=TipoConvenio::all();

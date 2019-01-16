@@ -277,7 +277,7 @@
                             {{--<a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>--}}
                         {{--</li>--}}
                         <li >
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Actividades<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-tasks fa-fw"></i> Actividades<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*actividadExtension') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('actividadExtension') }}">Actividades de Extension</a>
@@ -301,50 +301,52 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Convenios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
+                                <li {{ (Request::is('*convenio') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('convenio') }}">Convenios</a>
                                 </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+
+                            <a href="#"><i class="fa fa-building fa-fw"></i> Organizaciones<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('blank') }}">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url ('login') }}">Login Page</a>
+                                <li {{ (Request::is('*organizacion') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('organizacion') }}">Organizaciones</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
+
+                        <li>
+
+                            <a href="#"><i class="fa fa-graduation-cap fa-fw"></i> Titulados<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*titulado') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('titulado') }}">Titulados</a>
+                                </li>
+                            </ul>
+
+
                         </li>
+
+                        <li>
+
+                            <a href="#"><i class="fa fa-paperclip fa-fw"></i> Evidencias<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+
+                                <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('documentation') }}">Evidencias</a>
+                                </li>
+
+                            </ul>
+
+
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -18,9 +18,15 @@ class TituladoController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(){
+
+        return view('titulado');
+
+    }
+
+    public function index2()
     {
-        return view('registrar-titulados');
+        return view('admin.titulado.registrar-titulados');
     }
 
     /**

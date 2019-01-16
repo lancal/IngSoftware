@@ -33,7 +33,7 @@ class ActividadAprendizajeServicioController extends Controller
             ->select('convenios.id as idConvenio','organizaciones.nombre as nombreOrganizacion','organizaciones.rut as rutOrganizacion')->get();
 
 
-        return view('actividad-aprendizaje-servicio',compact('academic'),compact('dato'));
+        return view('admin.actividadAprendizajeServicio.actividad-aprendizaje-servicio',compact('academic'),compact('dato'));
     }
 
     /**

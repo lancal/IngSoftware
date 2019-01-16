@@ -130,7 +130,7 @@
 
 
                     <div class="col-md-12">
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('correo') ? ' has-error' : '' }}">
 
                             <label for="correo">Correo Electrónico</label>
 

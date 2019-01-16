@@ -44,7 +44,8 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/admin-home', 'HomeController@index')->middleware('AuthAdmin');
 
-Route::get('/convenios', 'ConvenioController@index');
+Route::get('/convenio', 'ConvenioController@index');
+Route::get('/convenios', 'ConvenioController@index2');
 Route::post('/convenios','ConvenioController@store')->name('convenios');
 Route::get('listarConvenios','ConvenioController@show')->name('listarConvenios');
 Route::get('convenio/{id}','ConvenioController@mostrarEvidencia')->name('evidencia');
@@ -52,8 +53,8 @@ Route::resource('convenio','ConvenioController');
 Route::get('listarConvenio/{id}','ConvenioController@mostrarConvenio')->name('listarConvenio');
 
 
-
-Route::get('/agregar-organizaciones', 'OrganizacionController@index');
+Route::get('/organizacion', 'OrganizacionController@index');
+Route::get('/agregar-organizaciones', 'OrganizacionController@index2');
 Route::post('/agregar-organizaciones', 'OrganizacionController@store')->name('agregar-organizaciones');
 Route::delete('/delete-organizaciones', 'OrganizacionController@destroy')->name('delete-organizaciones');
 Route::resource('organizaciones', 'OrganizacionController');
@@ -77,7 +78,10 @@ Route::get('/listar-actividad-aprendizaje-servicios', 'ActividadAprendizajeServi
 Route::resource('actividadAprendizajeServicios', 'ActividadAprendisajeServicioController');
 Route::delete('/delete-actividad-aprendizaje-servicios', 'TituladosController@destroy')->name('delete-actividad-aprendizaje-servicios');
 
-Route::get('/registrar-titulados','TituladoController@index');
+
+
+Route::get('/titulado','TituladoController@index');
+Route::get('/registrar-titulados','TituladoController@index2');
 Route::post('/registrar-titulados','TituladoController@store')->name('registrar-titulados');
 Route::get('/listar-titulados', 'TituladoController@show')->name('tituladoList');
 Route::resource('titulados', 'TituladoController');

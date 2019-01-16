@@ -31,7 +31,7 @@ class ActividadExtensionController extends Controller
 
         $academic=Academico::all();
         $convenio1=Convenio::all();
-        return view('actividad-extension',compact('academic','convenio1'));
+        return view('admin.extension.actividad-extension',compact('academic','convenio1'));
 
     }
 
