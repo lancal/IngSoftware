@@ -15,15 +15,7 @@ class ActividadAprendizajeServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index(){
-
-
-        return view('actividadAprendizajeServicio');
-
-    }
-
-    public function index2()
+    public function index()
     {
 
         $academic=Models\Academico::all();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Evidencia;
+use PhpParser\Node\Scalar\String_;
 
 class EvidenciaController extends Controller
 {
@@ -34,7 +35,7 @@ class EvidenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$nombre)
     {
         $this->validate($request,[
             'evidencia' => 'required|mimes:pdf|max:4096',
@@ -42,7 +43,18 @@ class EvidenciaController extends Controller
 
         ]);
 
-        $foldername = $request->nombre.'_'.$request->fecha_inicio;
+        switch ($nombre){
+            case 'convenio':
+                $foldername = $request->organizacion_rut.'_'.$request->fechaInicio;
+                break;
+            case 'actividad':
+                $foldername = $request->titulo.'_'.$request->fechaInicio;
+                break;
+            default:
+                $foldername = $request->_token;
+
+        }
+
 
         $filename = $request->file('evidencia')->store($foldername);
 

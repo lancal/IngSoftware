@@ -22,17 +22,9 @@ class ActividadExtensionController extends Controller
      */
     public function index()
     {
-
-        return view('actividadExtension');
-
-    }
-
-    public function index2(){
-
-        $academic=Academico::all();
-        $convenio1=Convenio::all();
+        $academic=Models\Academico::all();
+        $convenio1=Models\Convenio::all();
         return view('actividad-extension',compact('academic','convenio1'));
-
     }
 
     /**
@@ -160,31 +152,10 @@ class ActividadExtensionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-//    public function show(ActividadExtension $actividadExtension)
-//    {
-//        return view('listarActividadesExtension');
-//    }
-
-
-    public function show(){
-
-        $actividad = Actividad::all();
-
-        $actExtensionShow = ActividadExtension::all();
-        $expositorAct = ActividadExtensionesExpositores::join('actividad_extensiones', 'actividad_extensiones.actividad_id','=','actividad_extensiones_expositores.act_ext_actividad_id')
-            ->join('expositores', 'expositores.id','=','actividad_extensiones_expositores.expositor_id')
-            ->select('expositores.nombre as nombre', 'actividad_extensiones.actividad_id as id')->get();
-
-        $academico = AcademicoActividadExtension::join('actividad_extensiones', 'actividad_extensiones.actividad_id','=','academico_actividad_extensiones.act_ext_actividad_id')
-            ->join('academicos','academicos.rut','=','academico_actividad_extensiones.academico_rut')
-            ->select('academicos.nombre as nombreProfesor','actividad_extensiones.actividad_id as id')->get();
-
-        return view('admin.extension.listarActividadesExtension',
-            compact('actExtensionShow','actividad','academico'),compact('expositorAct'),compact('academico'));
-
-
+    public function show(ActividadExtension $actividadExtension)
+    {
+        return view('listarActividadesExtension');
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -192,14 +163,9 @@ class ActividadExtensionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function edit($idActividad)
+    public function edit(ActividadExtension $actividadExtension)
     {
-
-        $actividad = Actividad::all($idActividad);
-
-        $actExtensionEdit = ActividadExtension::all($idActividad);
-
-        return view('admin.extension.edit',compact('actExtensionEdit','actividad'));
+        //
     }
 
     /**
@@ -209,19 +175,9 @@ class ActividadExtensionController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idActividad)
+    public function update(Request $request, ActividadExtension $actividadExtension)
     {
-
-
-        $actividad =  ActividadExtension::find($idActividad);
-        $actividad->fill($request->all())->save();
-
-        $actExtensionUpdate =  ActividadExtension::find($idActividad);
-        $actExtensionUpdate->fill($request->all())->save();
-
-        return redirect()->route('actividad-extensionUpdate',
-            compact('$actExtensionUpdate','actividad'))
-            ->with('info','Actividad Extension actualizada con exito');
+        //
     }
 
     /**
