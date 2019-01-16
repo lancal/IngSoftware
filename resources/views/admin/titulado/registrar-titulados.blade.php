@@ -1,16 +1,11 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Registrar Titulados')
 
-
-
-@section('tittle')
-    <title>Registrar Titulados</title>
-
-@endsection
-@section('form')
+@section('section')
 </br>
 
 <div class="container ">
-    <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver al Menú Principal</a>
+    <a href="{{ route('titulado') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
 
     </br>
 </div>

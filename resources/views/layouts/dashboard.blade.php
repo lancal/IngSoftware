@@ -1,4 +1,5 @@
 @extends('layouts.plane')
+{{--@extends('plantillaGeneral')--}}
 
 @section('body')
     <div id="wrapper">
@@ -369,4 +370,3 @@
         </div>
     </div>
 @stop
-

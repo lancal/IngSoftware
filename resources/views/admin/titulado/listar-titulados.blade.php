@@ -1,13 +1,13 @@
-@extends('plantillaGeneral')
+{{--@extends('plantillaGeneral')--}}
 
-@section('tittle')
-    <title>Listado Titulados</title>
+@extends('layouts.dashboard')
+@section('page_heading','Listar Titulados')
 
-    @endsection
-    @section('contenido')
+
+    @section('section')
     </br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('titulado') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
     <br>

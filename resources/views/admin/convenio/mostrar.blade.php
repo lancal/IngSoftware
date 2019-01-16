@@ -1,11 +1,14 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Convenios de Colaboracion')
 
-@section('tittle')
-    <title>Convenio:</title>
-
-@endsection
-@section('contenido')
+@section('section')
 </br>
+
+    {{--<div class="container ">--}}
+        {{--<a href="{{ route('convenio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>--}}
+        {{--</br>--}}
+    {{--</div>--}}
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">

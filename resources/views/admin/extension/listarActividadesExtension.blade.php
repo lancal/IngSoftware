@@ -1,15 +1,11 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Actividades de Extension')
 
-@section('tittle')
-    <title>Listado de Actividades de Extensión</title>
-
-@endsection
-
-@section('contenido')
+@section('section')
 
     <br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('actividadExtension') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
     </br>
@@ -76,14 +72,8 @@
 
                                     <td>{{$item->cantidad_asistentes}}</td>
                                     <td></td>
-                                    <td width="10px">
-                                        <a href="{{route('listarConvenio',$item->id )}}" class="btn btn-sm btn-link">
-                                            ver
-                                        </a>
-                                    </td>
-
                                     <td >
-                                        <a href="{{route('convenio.edit',$item->id )}}" class="btn btn-sm btn-link">
+                                        <a href="{{route('actividadesExtension.edit',$item->id )}}" class="btn btn-sm btn-link">
                                             Editar
                                         </a>
                                     </td>

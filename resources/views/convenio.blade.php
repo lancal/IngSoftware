@@ -1,11 +1,13 @@
-@extends('plantillaGeneral')
+
+@extends('layouts.dashboard')
+@section('page_heading','Convenios')
 
 {{--@section('tittle')--}}
 {{--<title>Inicio</title>--}}
 
 {{--@endsection--}}
 
-@section('contenido')
+@section('section')
 
 </br>
 
@@ -19,8 +21,8 @@
         <div class="card-body">
             <h5 class="card-title">Convenios de Colaboración</h5>
             <p class="card-text"></p>
-            <a href="{{ route('convenios') }}" class="btn btn-primary">Registrar</a>
-            <a href="{{ route('listarConvenios')}}" class="btn btn-primary">Ver Listado</a>
+            <a href="{{ route('convenioRegistrar') }}" class="btn btn-primary">Registrar</a>
+            <a href="{{ route('showConvenios')}}" class="btn btn-primary">Ver Listado</a>
         </div>
     </div>
 </div>

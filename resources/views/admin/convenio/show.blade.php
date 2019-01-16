@@ -1,16 +1,13 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Mostrar Convenios')
 
-@section('tittle')
-    <title>Listado de Convenios de Colaboración</title>
-
-    @endsection
-    @section('contenido')
+    @section('section')
     </br>
 
-    <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
-        </br>
-    </div>
+    {{--<div class="container ">--}}
+        {{--<a href="{{ route('convenio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>--}}
+        {{--</br>--}}
+    {{--</div>--}}
 
     <div class="container">
         <div class="row">
@@ -27,7 +24,6 @@
                                 <th scope="col"  >Duración:</th>
                                 <th colspan="3">&nbsp;</th>
 
-
                             </tr>
                             </thead>
                             <tbody>
@@ -39,7 +35,7 @@
                                     <td>{{$item->duracion}}</td>
 
                                     <td width="10px">
-                                        <a href="{{route('listarConvenio',$item->id )}}" class="btn btn-sm btn-link">
+                                        <a href="{{route('showConvenios',$item->id )}}" class="btn btn-sm btn-link">
                                             Ver
                                         </a>
                                     </td>

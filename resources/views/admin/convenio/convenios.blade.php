@@ -1,22 +1,14 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Registrar Convenios')
 
-
-@section('tittle')
-    <title>Registrar Convenios de Colaboración</title>
-
-    @endsection
-
-    @section('form')
+    @section('section')
     </br>
-    <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver al Menú Principal</a>
+    {{--<div class="container ">--}}
+        {{--<a href="{{ route('convenio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>--}}
 
 
-        </br>
-    </div>
-
-
-
+        {{--</br>--}}
+    {{--</div>--}}
 
     <div class="container col-md-6">
         <div class="card">
@@ -24,7 +16,7 @@
             <div class="card-body">
                 <div class="container">
 
-                    <form name="form" action="{{ route('convenios') }}" method="POST" role="form" autocomplete="off" enctype="multipart/form-data">
+                    <form name="form" action="{{ route('convenioRegistrar') }}" method="POST" role="form" autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
 

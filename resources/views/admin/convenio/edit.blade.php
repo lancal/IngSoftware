@@ -1,19 +1,14 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Editar Convenios')
 
-
-@section('tittle')
-    <title>Editar Convenio de Colaboración</title>
-
-    @endsection
-
-    @section('form')
+    @section('section')
     </br>
-    <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver al Menú Principal</a>
+    {{--<div class="container ">--}}
+        {{--<a href="{{ route('convenio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>--}}
 
 
-        </br>
-    </div>
+        {{--</br>--}}
+    {{--</div>--}}
 
 
 

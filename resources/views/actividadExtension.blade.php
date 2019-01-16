@@ -1,18 +1,30 @@
-@extends('plantillaGeneral')
+{{--@extends('plantillaGeneral')--}}
 
 {{--@section('tittle')--}}
     {{--<title>Inicio</title>--}}
 
 {{--@endsection--}}
 
-@section('contenido')
+{{--@section('contenido')--}}
+
+@extends('layouts.dashboard')
+@section('page_heading','Actividades de Extension')
+
+@section('section')
 
 </br>
+
 
 <div class="container ">
     <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
     </br>
 </div>
+
+
+
+
+    <div class="container col-md-12">
+
 
         <div class="col-sm-4">
             <div class="card">
@@ -24,6 +36,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
 
 
 @endsection

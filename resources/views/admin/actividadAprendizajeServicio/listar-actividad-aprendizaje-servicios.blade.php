@@ -1,13 +1,11 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Listado Actividades Aprendizaje mas Servicios')
 
-@section('tittle')
-    <title>Listado Actividades Aprendizaje + Servicios</title>
 
-    @endsection
-    @section('contenido')
+    @section('section')
     </br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('actividadAprendizajeServicio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
     <br>

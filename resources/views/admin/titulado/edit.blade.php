@@ -1,23 +1,19 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Editar Titulados')
 
+@section('section')
 
-
-@section('tittle')
-    <title>Registrar Titulados</title>
-
-@endsection
-@section('form')
 </br>
 
 <div class="container ">
-    <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver al Menú Principal</a>
+    <a href="{{ route('titulado') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
 
     </br>
 </div>
 
 <div class="container col-md-5 ">
     <div class="card ">
-        <h4 class="card-header">Registrar Titulados</h4>
+        <h4 class="card-header">Editar Titulados</h4>
         <div class="card-body">
             <div class="container">
                 <form name="form"  onsubmit="return Valida_Rut(form.rut)" method="POST" action="{{ route('titulados.update',$titulados->rut) }}" autocomplete="off">

@@ -1,12 +1,10 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Registrar Actividad Aprendizaje mas Servicio')
 
-@section('tittle')
-    <title>Registrar Actividad Aprendizaje + Servicio</title>
-    @endsection
-    @section('form')
+    @section('section')
     </br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('actividadAprendizajeServicio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
 

@@ -1,10 +1,12 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Editar Organizaciones o Empresas')
 
-@section('tittle')
-    <title>Editar Organizacion</title>
+    @section('section')</br>
 
-    @endsection
-    @section('contenido')</br>
+    <div class="container ">
+        <a href="{{ route('organizacion') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        </br>
+    </div>
 
     <div class="container col-md-5">
         <div class="card">

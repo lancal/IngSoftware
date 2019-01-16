@@ -1,13 +1,10 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Mostrar Organizaciones o Empresas')
 
-@section('tittle')
-    <title>Listado Organizaciones</title>
-
-@endsection
-@section('contenido')
+@section('section')
     <br>
     <div class="container ">
-        <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('organizacion') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
     </br>

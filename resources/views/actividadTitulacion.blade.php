@@ -1,11 +1,13 @@
-@extends('plantillaGeneral')
+{{--@extends('plantillaGeneral')--}}
 
 {{--@section('tittle')--}}
 {{--<title>Inicio</title>--}}
 
 {{--@endsection--}}
+@extends('layouts.dashboard')
+@section('page_heading','Actividades de Titulacion')
 
-@section('contenido')
+@section('section')
 
 </br>
 

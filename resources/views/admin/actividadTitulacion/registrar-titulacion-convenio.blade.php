@@ -1,17 +1,21 @@
-@extends('plantillaGeneral')
+{{--@extends('plantillaGeneral')
 
 
 
 @section('tittle')
     <title>Registrar Actividad Titulación por Convenio</title>
 
-@endsection
+@endsection--}}
 
-@section('form')
+
+@extends('layouts.dashboard')
+@section('page_heading','Listar Actividades de Extension')
+
+@section('section')
 </br>
 
 <div class="container ">
-    <a href="{{ route('home') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+    <a href="{{ route('actividadTitulacion') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
     </br>
 </div>
 

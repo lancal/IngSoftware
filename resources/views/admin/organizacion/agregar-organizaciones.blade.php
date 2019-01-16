@@ -1,12 +1,9 @@
-@extends('plantillaGeneral')
+@extends('layouts.dashboard')
+@section('page_heading','Registrar Organizaciones o Empresas')
 
-@section('tittle')
-    <title>Agregar Organizaciones</title>
-
-    @endsection
-    @section('contenido')</br>
+    @section('section')</br>
     <div class="container ">
-        <a href="{{ route('convenios') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
+        <a href="{{ route('organizacion') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
         </br>
     </div>
 

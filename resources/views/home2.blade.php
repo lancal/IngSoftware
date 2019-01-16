@@ -406,3 +406,4 @@
     <!-- /.col-lg-4 -->
 
 @stop
+{{--@endsection--}}
