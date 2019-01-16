@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
 @section('page_heading','Mostrar Convenios')
 
-    @section('section')
+@section('section')
     </br>
 
-    {{--<div class="container ">--}}
-        {{--<a href="{{ route('convenio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>--}}
-        {{--</br>--}}
-    {{--</div>--}}
+{{--<div class="container ">--}}
+    {{--<a href="{{ route('convenio') }}" class="btn btn-outline-secondary"> Volver Atrás</a>--}}
+    {{--</br>--}}
+{{--</div>--}}
 
     <div class="container">
         <div class="row">
@@ -76,4 +76,4 @@
     </div>
 
 
-@endsection
+@stop

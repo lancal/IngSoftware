@@ -4,7 +4,7 @@
 @section('page_heading','Listar Titulados')
 
 
-    @section('section')
+@section('section')
     </br>
     <div class="container ">
         <a href="{{ route('titulado') }}" class="btn btn-outline-secondary"> Volver Atrás</a>
@@ -75,4 +75,4 @@
     </div>
 
 
-@endsection
+@stop

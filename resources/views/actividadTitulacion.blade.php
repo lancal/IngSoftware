@@ -23,9 +23,9 @@
             <h5 class="card-title">Actividad de Titulación por Convenio</h5>
             <p class="card-text"></p>
             <a href="{{ route('registrar-titulacion-convenio') }}" class="btn btn-primary">Registrar</a>
-            <a href="#" class="btn btn-primary">Ver Listado</a>
+            <a href="{{route ('tituladoList')}}" class="btn btn-primary">Ver Listado</a>
         </div>
     </div>
 </div>
 
-@endsection
+@stop

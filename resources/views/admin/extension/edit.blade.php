@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('page_heading','Organizaciones')
+@section('page_heading','Editar Actividades de Extension')
 
     @section('section')
     </br>
