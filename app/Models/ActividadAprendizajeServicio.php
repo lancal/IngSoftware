@@ -17,9 +17,13 @@ class ActividadAprendizajeServicio extends Model
 
     }
 
-    public function academico(){
-        return $this->belongsTo(Academico::class,
-            'rut');
+    public function academicos(){
+        return $this->belongsToMany(Academico::class,
+            'act_apren_serv_academicos',
+            'academico_rut',
+            'act_apren_serv_aca_id',
+            null,
+            'actividad_id');
 
     }
 }
