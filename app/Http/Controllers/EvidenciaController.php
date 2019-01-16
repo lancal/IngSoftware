@@ -42,7 +42,7 @@ class EvidenciaController extends Controller
 
         ]);
 
-        $foldername = $request->titulo.'_'.$request->fechaInicio;
+        $foldername = $request->nombre.'_'.$request->fecha_inicio;
 
         $filename = $request->file('evidencia')->store($foldername);
 

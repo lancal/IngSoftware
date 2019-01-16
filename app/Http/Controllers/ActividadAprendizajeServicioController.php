@@ -15,12 +15,25 @@ class ActividadAprendizajeServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(){
+
+
+        return view('actividadAprendizajeServicio');
+
+    }
+
+    public function index2()
     {
 
         $academic=Models\Academico::all();
+        $dato=Models\Convenio::join('tipo_convenios','tipo_convenios.id','=','convenios.tipo_convenio_id')
+            ->join('organizaciones','organizaciones.rut','=','convenios.organizacion_rut')
+            ->where('tipo_convenios.nombre','=','A+S')
+            ->select('convenios.id as idConvenio','organizaciones.nombre as nombreOrganizacion','organizaciones.rut as rutOrganizacion')->get();
 
-        return view('actividad-aprendizaje-servicio',compact('academic'));
+
+        return view('actividad-aprendizaje-servicio',compact('academic'),compact('dato'));
     }
 
     /**
@@ -50,9 +63,15 @@ class ActividadAprendizajeServicioController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(ActividadAprendizajeServicio $actividadAprendizajeServicio)
+    public function show()
     {
-        //
+        $aprendizaje =ActividadAprendizajeServicio::join('actividades','actividades.id','=','actividad_aprendizaje_servicios.actividad_id')
+            ->join('academicos','academicos.rut','=','actividad_aprendizaje_servicios.academico_rut')
+            ->select('actividades.titulo as title','actividades.descripcion as desc','actividades.cantidad_asistentes as cantAsistentes','actividad_aprendizaje_servicios.asignatura as asig',
+                'actividad_aprendizaje_servicios.anio as year','actividad_aprendizaje_servicios.semestre as sem' ,'academicos.nombre as name')->get();
+
+
+        return view('admin.actividadAprendizajeServicio.listar-actividad-aprendizaje-servicios',compact('aprendizaje'));
     }
 
     /**

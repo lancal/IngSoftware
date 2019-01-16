@@ -10,12 +10,14 @@ class Convenio extends Model
 
     protected $fillable = ['nombre','fecha_inicio','duracion','organizacion_rut','tipo_convenio_id'];
 
+    protected $attributes = ['borrado' => false];
+
 
 
     public function tipoConvenio()
     {
        return $this->belongsTo(TipoConvenio::class,
-           'id');
+           'tipo_convenio_id');
 
     }
 
@@ -32,4 +34,21 @@ class Convenio extends Model
     }
 
 
+    public function borrar(){
+        $this->borrado = true;
+        return $this->save();
+    }
+
+    public static function buscar($id){
+        return Convenio::findOrFail($id)->where('borrado','=','0')->get();
+    }
+
+    public static function todos(){
+        return Convenio::all()->where('borrado','=','0');
+    }
+
+    public function recuperar(){
+        $this->borrado = false;
+        return $this->save();
+    }
 }

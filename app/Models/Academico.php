@@ -9,6 +9,7 @@ class Academico extends Model
     protected $table = 'academicos';
     protected $primaryKey = 'rut';
     public $incrementing = false;
+        protected $attributes = ['borrado' => false];
 
     protected $fillable = ['rut','nombre','tipo_academico_id'];
 
@@ -31,16 +32,36 @@ class Academico extends Model
 
     public function actividadExtensiones(){
         return $this-> belongsToMany(ActividadExtension::class,
-            'academico_actividad_extension',
+            'academico_actividad_extensiones',
             'academico_rut',
             'act_ext_actividad_id');
 
     }
 
     public function actividadAprendizajeServicios(){
-        return $this->hasMany(ActividadAprendizajeServicio::class,
-            'actividad_id',
-            'academico_rut');
+        return $this->belongsToMany(ActividadAprendizajeServicio::class,
+            'act_apren_serv_academicos',
+            'academico_rut',
+            'act_apren_serv_aca_id',
+            'actividad_id');
 
+    }
+
+    public function borrar(){
+        $this->borrado = true;
+        return $this->save();
+    }
+
+    public static function buscar($id){
+        return Academico::findOrFail($id)->where('borrado','=','0')->get()->first();
+    }
+
+    public static function todos(){
+        return Academico::all()->where('borrado','=','0');
+    }
+
+    public function recuperar(){
+        $this->borrado = false;
+        return $this->save();
     }
 }

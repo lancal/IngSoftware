@@ -21,7 +21,8 @@
         <div class="card-body">
             <div class="container">
                 <form name="form" method="POST"
-                      action="{{ route('actividad-extension') }}" autocomplete="off">
+                      action="{{ route('actividad-extension') }}" autocomplete="off"
+                      enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                     <div class="col-md-12">
@@ -65,17 +66,17 @@
                         <div class="form-row">
                             <div class="col-md-12">
                                 <label>&nbsp;Puede agregar hasta 4 Expositores. </label>
+
                                 <input class="btn btn-secondary" type="button" value="Agregar"
-                                       onClick="addRow('dataTable1')"/>
+                                       onClick="addSampleRow('dataTable1')"/>
                                 <input class="btn btn-secondary" type="button" value="Eliminar"
                                        onClick="removeSampleRow('dataTable1')"/>
-
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="col-md-0.5">
-                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                             </div>
                             <div class="col-md-5">
                                 <label for="nombreExpositor">Nombre Expositor o Relator</label>
@@ -85,27 +86,27 @@
                     <div class="col-md-12 ">
 
 
-                        <table id="dataTable1" class="table table-borderless">
+                        <table id="dataTable1" width="100%">
 
 
                             <tbody>
                             <tr>
-                                <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                <td><input type="checkbox" name="chk[]"/></td>
                                 <td>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group {{ $errors->has('nombreExpositor') ? ' has-error' : '' }}">
-                                            <input class="form-control" id="nombreExpositor" name="nombreExpositor"
-                                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                                   placeholder="Ejemplo: Ingrese Nombre Expositor o Relator" required>
 
-                                            @if ($errors->has('nombreExpositor'))
-                                                <span class="help-block">
+                                    <div class="form-group {{ $errors->has('nombreExpositor') ? ' has-error' : '' }}">
+                                        <input class="form-control" id="nombreExpositor1" name="nombreExpositor1"
+                                               pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                               placeholder="Ingrese Nombre Expositor o Relator" required autofocus>
+
+                                        @if ($errors->has('nombreExpositor'))
+                                            <span class="help-block">
                                         <strong>{{ $errors->first('nombreExpositor') }}</strong>
                                     </span>
-                                            @endif
-                                        </div>
+                                        @endif
                                     </div>
+
                                 </td>
 
 
@@ -122,7 +123,7 @@
                             <div class="col-md-12">
                                 <label>&nbsp;Puede agregar hasta 4 Academicos Organizadores. </label>
                                 <input class="btn btn-secondary" type="button" value="Agregar"
-                                       onClick="addRow('dataTable')"/>
+                                       onClick="addSampleRow('dataTable')"/>
                                 <input class="btn btn-secondary" type="button" value="Eliminar"
                                        onClick="removeSampleRow('dataTable')"/>
 
@@ -131,7 +132,7 @@
 
                         <div class="form-row">
                             <div class="col-md-0.5">
-                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                             </div>
                             <div class="col-md-5">
                                 <label for="organizador">Organizador Actividad</label>
@@ -141,23 +142,35 @@
                     <div class="col-md-12 ">
 
 
-                        <table id="dataTable" class="table table-borderless">
+                        <table id="dataTable" width="100%">
 
 
                             <tbody>
                             <tr>
-                                <td><input class="form-check-input" type="checkbox" name="chk[]"/></td>
+                                <td><input type="checkbox" name="chk[]"/></td>
                                 <td>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group {{ $errors->has('organizador') ? ' has-error' : '' }}">
+
+                                    <div class="form-group" {{ $errors->has('nombreProfesor2') ? ' has-error' : '' }}>
+
+                                        <select class="form-control" name="nombreProfesor1" id="nombreProfesor1"
+                                                pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                                                placeholder="Ingrese Nombre del Profesor" required autofocus>
+                                            <option value="">Elija una opción</option>
+                                        @foreach($academic as $tipo)
+                                                <option value="{{$tipo->rut}}">{{$tipo->nombre}}</option>
+                                            @endforeach
+                                        </select>
 
 
-                                            <input class="form-control" id="exampleFormControlInput1" name="organizador"
-                                                   pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                                   placeholder="Ingrese Organizador de la Actividad" required autofocus>
-                                        </div>
+                                        @if ($errors->has('nombreProfesor1'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('nombreProfesor1') }}</strong>
+                                    </span>
+                                        @endif
+
                                     </div>
+
                                 </td>
 
 
@@ -170,15 +183,15 @@
                     <hr>
 
                     <div class="col-md-12">
-                        <div class="form-group {{ $errors->has('fecha') ? ' has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('fechaRealizacion') ? ' has-error' : '' }}">
                             <label for="fecha">Fecha Actividad</label>
 
-                            <input type="date" class="form-control" id="fechaInicio" name="fechaInicio"
+                            <input type="date" class="form-control" id="fechaRealizacion" name="fechaRealizacion"
                                    required autofocus>
 
-                            @if ($errors->has('fecha'))
+                            @if ($errors->has('fechaRealizacion'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('fecha') }}</strong>
+                                        <strong>{{ $errors->first('fechaRealizacion') }}</strong>
                                     </span>
                             @endif
                         </div>
@@ -243,23 +256,44 @@
                             @endif
                         </div>
                     </div>
+                    <div class="col-md-12">
+                    <div class="form-group" {{ $errors->has('convenio') ? ' has-error' : '' }}>
+                        <label for="exampleFormControlInput1">¿Pertenece a algún convenio?</label>
+
+                        <select class="form-control" name="convenio" id="convenio"
+                                pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
+                               required autofocus>
+                            <option value="">Elija una opción</option>
+                            <option value = "0">Ninguno</option>
+                            @foreach($convenio1 as $tipo)
+                                <option value="{{$tipo->id}}">{{$tipo->nombre}}</option>
+                            @endforeach
+                        </select>
 
 
+                        @if ($errors->has('convenio'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('convenio') }}</strong>
+                                    </span>
+                        @endif
 
+                    </div>
+                    </div>
 
                     <hr>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Evidencia: Archivo (.pdf, .jpg, .png) Lista
+                            <label for="evidencia">Evidencia: Archivo (.pdf, .jpg, .png) Lista
                                 Asistencia Actividad</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file" id="evidencia" name = "evidencia">
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Adjuntar Fotografias Actividad</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <label for="evidenciaFotos">Adjuntar Fotografias Actividad</label>
+                            <input type="file" class="form-control-file" id="evidenciaFotos"
+                                   name="evidenciaFotos" multiple>
                         </div>
                     </div>
                     <hr>
@@ -280,21 +314,76 @@
 </br></br>
 @endsection
 
-<script>function addRow(tableID) {
-        var table = document.getElementById(tableID);
-        var rowCount = table.rows.length;
-        if(rowCount < 4){							// limit the user from creating fields more than your limits
-            var row = table.insertRow(rowCount);
-            var colCount = table.rows[0].cells.length;
-            for(var i=0; i<colCount; i++) {
-                var newcell = row.insertCell(i);
-                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-            }
-        }else{
-            alert("Numero Máximo de Estudiantes es 4.");
+<script>
+        function addSampleRow(id) {
 
+            if (id == "dataTable1") {
+                var objTable = document.getElementById(id);
+                var rowCount = objTable.rows.length;
+
+                if (rowCount < 4) {
+                    var objRow = objTable.insertRow(objTable.rows.length);
+                    var objCell1 = objRow.insertCell(0);
+                    var objInputCheckBox = document.createElement("input");
+                    objInputCheckBox.type = "checkbox";
+                    objCell1.appendChild(objInputCheckBox);
+                    var objCell2 = objRow.insertCell(1);
+                    objCell2.innerHTML = "<div class=\"form-group {{ $errors->has('nombreExpositor') ? ' has-error' : '' }}\">\n" +
+                        "                 <input class=\"form-control\" id=\"nombreExpositor" + (rowCount + 1) + "\" name=\"nombreExpositor" + (rowCount + 1) + "\"\n" +
+                        "                   pattern=\"[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\\s]*\"\n" +
+                        "                   placeholder=\"Ingrese Nombre Expositor o Relator\" required autofocus>\n" +
+                        "                 @if ($errors->has('nombreExpositor'))\n" +
+                        "                     <span class=\"help-block\">\n" +
+                        "                     <strong>{{ $errors->first('nombreExpositor') }}</strong>\n" +
+                        "                     </span>\n" +
+                        "                 @endif\n" +
+                        "                </div>";
+                    ;
+
+                } else {
+                    alert("Número Máximo de Estudiantes es 4.");
+
+                }
+            }
+            if (id == "dataTable") {
+                var objTable = document.getElementById(id);
+                var rowCount = objTable.rows.length;
+                if (rowCount < 4) {
+                    var objRow = objTable.insertRow(objTable.rows.length);
+                    var objCell1 = objRow.insertCell(0);
+                    var objInputCheckBox = document.createElement("input");
+                    objInputCheckBox.type = "checkbox";
+                    objCell1.appendChild(objInputCheckBox);
+                    var objCell2 = objRow.insertCell(1);
+                    objCell2.innerHTML = "<div class=\"form-group\" {{ $errors->has('nombreProfesor') ? ' has-error' : '' }}>\n" +
+                        "\n" +
+                        "                                        <select class=\"form-control\" name=\"nombreProfesor" + (rowCount + 1) + "\" id=\"nombreProfesor" + (rowCount + 1) + "\"\n" +
+                        "                                                pattern=\"[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\\s]*\"\n" +
+                        "                                                placeholder=\"Ingrese Nombre del Profesor\" required autofocus>\n" +
+                        "                                            <option value=\"\">Elija una opción</option>\n" +
+                        "                                        @foreach($academic as $tipo)\n" +
+                        "                                                <option value=\"{{$tipo->rut}}\">{{$tipo->nombre}}</option>\n" +
+                        "                                            @endforeach\n" +
+                        "                                        </select>\n" +
+                        "\n" +
+                        "\n" +
+                        "                                        @if ($errors->has('nombreProfesor'))\n" +
+                        "                                            <span class=\"help-block\">\n" +
+                        "                                        <strong>{{ $errors->first('nombreProfesor') }}</strong>\n" +
+                        "                                    </span>\n" +
+                        "                                        @endif\n" +
+                        "\n" +
+                        "                                    </div>";
+                    ;
+
+                } else {
+                    alert("Número Máximo de Estudiantes es 4.");
+
+                }
+
+
+            }
         }
-    }
 
     function removeSampleRow(id) {
         /***We get the table object based on given id ***/

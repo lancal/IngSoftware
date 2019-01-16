@@ -34,10 +34,14 @@
 
                                     <td width="10px">
                                         <a href="{{route('listarConvenio',$item->id )}}" class="btn btn-sm btn-link">
-                                            ver
+                                            Ver
                                         </a>
                                     </td>
-
+                                    <td>
+                                        <a href="{{route('convenio.show',$item->id)}}" class="btn btn-sm btn-link">
+                                            Evidencia
+                                        </a>
+                                    </td>
                                     <td >
                                         <a href="{{route('convenio.edit',$item->id )}}" class="btn btn-sm btn-link">
                                             Editar

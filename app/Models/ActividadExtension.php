@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\TipoActividad;
 use Illuminate\Database\Eloquent\Model;
 
 class ActividadExtension extends Model
@@ -30,5 +31,9 @@ class ActividadExtension extends Model
             'expositor_id',
             'act_ext_actividad_id'
             );
+    }
+
+    public function tipoActividad(){
+        return $this->belongsTo(TipoActividad::class,'tipo_actividades_id');
     }
 }

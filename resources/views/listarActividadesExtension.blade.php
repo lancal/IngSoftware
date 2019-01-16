@@ -22,38 +22,40 @@
                 <table class="table">
                     <thead>
                     <tr>
-
-                        <th>Lugar </th>
-                        <th>Fecha Realizacion </th>
-                        <th>Descripcion </th>
-                        <th>Titulo </th>
-                        <th>Cantidad Asistentes</th>
-
-                        {{--<th> Tipo Empresa</th>--}}
+                        <th >#Titulo:</th>
+                        <th scope="col" >Descripcion:</th>
+                        <th scope="col" >Expositores:</th>
+                        <th scope="col" >Académico Organizador:</th>
+                        <th scope="col" >Fecha realización:</th>
+                        <th scope="col" >Lugar:</th>
+                        <th scope="col" >Cantidad Estudiantes:</th>
+                        <th scope="col" >Cantidad Estudiantes:</th>
+                        <th scope="col" >Convenio al que pertenece:</th>
+                        <th colspan="3">&nbsp;</th>
 
 
                     </tr>
                     </thead>
                     <tbody>
 
-                    <?php $actividadesExtension = App\Models\ActividadExtension::all();?>
+                    {{--<?php $actividadesExtension = App\Models\ActividadExtension::all();?>--}}
 
-                    <?php $actividades = App\Models\Actividad::all();?>
+                    {{--<?php $actividades = App\Models\Actividad::all();?>--}}
 
-                    @foreach($actividadesExtension as $actividadExtension)
+                    @foreach($actExtensionShow as $item)
                         <tr>
-                        <td> {{$actividadExtension->lugar}}                     </td>
-                        <td> {{$actividadExtension->fecha_realizacion}}         </td>
+                        <td> {{$actExtensionShow->lugar}}                     </td>
+                        <td> {{$actExtensionShow->fecha_realizacion}}         </td>
                         {{--<td> {{$actividadExtension->responsable}}    </td>--}}
 
                         {{--<td> {{$organizacion->tipoEmpresa}}    </td>--}}
 
-                        @foreach($actividades as $actividad)
+                        @foreach($actividad as $item)
 
-                            @if ($actividadExtension->actividad_id == $actividad->id)
-                                    <td>{{$actividad->descripcion}}</td>
-                                    <td>{{$actividad->titulo}}</td>
-                                    <td>{{$actividad->cantidad_asistentes}}</td>
+                            @if ($item->actividad_id == $item->id)
+                                    <td>{{$item->descripcion}}</td>
+                                    <td>{{$item->titulo}}</td>
+                                    <td>{{$item->cantidad_asistentes}}</td>
                             @endif
                         @endforeach
 

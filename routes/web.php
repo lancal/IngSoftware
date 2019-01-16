@@ -26,7 +26,7 @@
 //  return view('home');
 
 //});
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index2')->name('home');
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->middleware('auth');
@@ -47,7 +47,7 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 Route::get('/convenios', 'ConvenioController@index');
 Route::post('/convenios','ConvenioController@store')->name('convenios');
 Route::get('listarConvenios','ConvenioController@show')->name('listarConvenios');
-//Route::get('listarConvenios','ConvenioController@mostrarEvidencia')->name('evidencia'); //...
+Route::get('convenio/{id}','ConvenioController@mostrarEvidencia')->name('evidencia');
 Route::resource('convenio','ConvenioController');
 Route::get('listarConvenio/{id}','ConvenioController@mostrarConvenio')->name('listarConvenio');
 
@@ -61,15 +61,21 @@ Route::resource('organizaciones', 'OrganizacionController');
 
 
 
-
 Route::get('/organizationList', 'OrganizacionController@show')->name('organizationList');
 
-Route::get('/actividad-extension', 'ActividadExtensionController@index');
+
+Route::get('/actividadExtension', 'ActividadExtensionController@index');
+Route::get('/actividad-extension', 'ActividadExtensionController@index2');
 Route::get('/listarActividadesExtension', 'ActividadExtensionController@show')->name('listarActividadesExtension');
 Route::post('/actividad-extension', 'ActividadExtensionController@store')->name('actividad-extension');
+Route::resource('actividadesExtension','ActividadExtensionController');
 
-Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index');
+Route::get('/actividadAprendizajeServicio', 'ActividadAprendizajeServicioController@index');
+Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index2');
 Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@store')->name('actividad-aprendizaje-servicio');
+Route::get('/listar-actividad-aprendizaje-servicios', 'ActividadAprendizajeServicioController@show')->name('actividadAprendizajeServiciosList');
+Route::resource('actividadAprendizajeServicios', 'ActividadAprendisajeServicioController');
+Route::delete('/delete-actividad-aprendizaje-servicios', 'TituladosController@destroy')->name('delete-actividad-aprendizaje-servicios');
 
 Route::get('/registrar-titulados','TituladoController@index');
 Route::post('/registrar-titulados','TituladoController@store')->name('registrar-titulados');
@@ -77,6 +83,8 @@ Route::get('/listar-titulados', 'TituladoController@show')->name('tituladoList')
 Route::resource('titulados', 'TituladoController');
 Route::delete('/delete-titulados', 'TituladosController@destroy')->name('delete-titulados');
 
-Route::get('/registrar-titulacion-convenio', 'ActividadTitulacionController@index');
+
+Route::get('/actividadTitulacion', 'ActividadTitulacionController@index');
+Route::get('/registrar-titulacion-convenio', 'ActividadTitulacionController@index2');
 Route::post('/registrar-titulacion-convenio', 'ActividadTitulacionController@store')->name('registrar-titulacion-convenio');
 

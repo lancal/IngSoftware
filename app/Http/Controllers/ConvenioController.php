@@ -61,8 +61,15 @@ class ConvenioController extends Controller
         $convenio->tipo_convenio_id = $request->tipo_convenio_id;
 
         $convenio->save();
-        $evidence = new Evidencia();
+        $evidenciaController = new EvidenciaController;
+
+        $evidencias = $evidenciaController->store($request,'convenio');
+
+        $evidencias[0]->convenio()->associate($convenio);
+
+        $evidencias[0]->save();
         
+
 
         $tipoConvenio=TipoConvenio::find($convenio->tipo_convenio_id);
         $tipo_convenio=TipoConvenio::all();
@@ -99,6 +106,8 @@ class ConvenioController extends Controller
 
         return view('admin.convenio.mostrar',compact('convenio', 'tipoConvenio','org'));
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -160,6 +169,14 @@ class ConvenioController extends Controller
 
         return back()->with('info', 'Eliminado Correctamente');
 
+    }
+
+    public function mostrarEvidencia($id){
+        $path = Convenio::find($id)->evidencia->ruta;
+
+        $pdf = (storage_path( "app/{$path}"));
+
+        return response()->file($pdf,['Content-Type: application/pdf']);
     }
 
 
