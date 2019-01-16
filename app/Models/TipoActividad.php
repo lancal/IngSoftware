@@ -15,3 +15,4 @@ class TipoActividad extends Model
             'tipo_actividades_id');
     }
 }
+
