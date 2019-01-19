@@ -10,14 +10,12 @@
 
     <div class="container  col-md-6">
         <div class="card">
-            <h4 class="card-header">Registrar Actividad Aprendizaje + Servicio</h4>
+            <h4 class="card-header">Editar Actividad Aprendizaje + Servicio</h4>
             <div class="card-body">
                 <div class="container">
-                    <form name="form"  action="{{ route('actividad-aprendizaje-servicio') }}" method="POST" role="form" autocomplete="off">
+                    <form name="form"  action="{{ route('actividadAprendizajeServicios.update',$actividad->id) }}" method="POST" role="form" autocomplete="off">
                         {{ csrf_field() }}
-
-
-
+                        {!! method_field('PUT') !!}
 
                         <div class="col-md-12">
                             <div class="form-group{{ $errors->has('titulo') ? ' has-error' : '' }}">
@@ -26,7 +24,8 @@
 
                                 <input class="form-control" id="titulo" name="titulo"
                                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*[0-9]*"
-                                       placeholder="Ingrese Título de la Actividad" required autofocus>
+                                       placeholder="Ingrese Título de la Actividad" required autofocus
+                                       value="{{$actividad->titulo}}">
 
                                 @if ($errors->has('titulo'))
                                     <span class="help-block">
@@ -42,7 +41,8 @@
 
 
                                 <label for="descripcion">Decripción</label>
-                                <textarea class="form-control" id="descripcion" name="descripcion" maxlength="200" rows="3"  placeholder="Ingrese Descripción de la Actividad"required autofocus></textarea>
+                                <textarea class="form-control" id="descripcion" name="descripcion" maxlength="200" rows="3"
+                                required autofocus>{{$actividad->descripcion}}</textarea>
 
 
                                 @if ($errors->has('descripcion'))
@@ -60,7 +60,8 @@
                                 <label for="asignatura">Asignatura</label>
                                 <input class="form-control" id="asignatura" name="asignatura"
                                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*"
-                                       placeholder="Ingrese Asignatura" required autofocus>
+                                       placeholder="Ingrese Asignatura" required autofocus
+                                       value="{{$actividadAS->asignatura}}">
                                 @if ($errors->has('asignatura'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('asignatura') }}</strong>
@@ -76,7 +77,8 @@
                                 <label for="cantidad">Cantidad Estudiantes</label>
                                 <input class="form-control" id="cantidad" name="cantidad"
                                        pattern="[1-9]+[0-9]*"
-                                       placeholder="Ingrese cantidad asistentes" required autofocus>
+                                       placeholder="Ingrese cantidad asistentes" required autofocus
+                                       value="{{$actividad->cantidad_asistentes}}">
 
                                 @if ($errors->has('cantidad'))
                                     <span class="help-block">

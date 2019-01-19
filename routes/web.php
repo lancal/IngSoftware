@@ -75,7 +75,7 @@ Route::get('/actividadAprendizajeServicio', 'ActividadAprendizajeServicioControl
 Route::get('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@index2');
 Route::post('/actividad-aprendizaje-servicio', 'ActividadAprendizajeServicioController@store')->name('actividad-aprendizaje-servicio');
 Route::get('/listar-actividad-aprendizaje-servicios', 'ActividadAprendizajeServicioController@show')->name('actividadAprendizajeServiciosList');
-Route::resource('actividadAprendizajeServicios', 'ActividadAprendisajeServicioController');
+Route::resource('actividadAprendizajeServicios', 'ActividadAprendizajeServicioController');
 Route::delete('/delete-actividad-aprendizaje-servicios', 'TituladosController@destroy')->name('delete-actividad-aprendizaje-servicios');
 
 
